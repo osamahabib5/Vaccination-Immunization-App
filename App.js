@@ -10,7 +10,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} options={{ title: 'Child Immunization' }}/>
+        <Stack.Screen name="Home" component={Home} options={{ title: 'Child Immunization  Osama' }}/>
         <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
     </NavigationContainer>
