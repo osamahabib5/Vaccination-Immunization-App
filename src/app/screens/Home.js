@@ -10,7 +10,7 @@ export default function Home({ navigation }) {
           navigation.navigate('Details', { name: 'Omer' })
         }
         style={styles.roundButton}>
-        <Text>I'm a button for Logging In.</Text>
+        <Text>I'm a button for Logging Into the portal.</Text>
       </TouchableOpacity>
       {/* <Button
         title="Go to profile"
