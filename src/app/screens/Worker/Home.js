@@ -4,7 +4,7 @@ import { styles } from '../../styles/style';
 import { Icon } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient';
 
-export default function WorkerSignIn({ navigation, route }) {
+export default function Home({ navigation, route }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (

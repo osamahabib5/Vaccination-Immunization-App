@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import { ScrollView, SafeAreaView, StyleSheet, Text, TextInput, View, Button, TouchableOpacity, Image } from 'react-native';
-import { styles } from '../styles/style';
+import { styles } from '../../styles/style';
 import { Icon } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient';
 

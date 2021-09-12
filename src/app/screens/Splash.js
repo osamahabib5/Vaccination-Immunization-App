@@ -4,7 +4,7 @@ import { styles } from '../styles/style';
 import { Icon } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient';
 
-export default function Home({ navigation }) {
+export default function Splash({ navigation }) {
   return (
     <View style={styles.container}>
        <LinearGradient style={styles.linearGradient}
