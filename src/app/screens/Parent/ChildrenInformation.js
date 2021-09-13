@@ -5,7 +5,7 @@ function ChildrenInformation() {
     return (
         <View>
             <Text>
-                My name is Kaalia
+                My name is Google
             </Text>
         </View>
     )
