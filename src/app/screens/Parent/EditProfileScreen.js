@@ -41,7 +41,7 @@ function EditProfileScreen() {
                             </TouchableOpacity>
                             <Text style = {{marginTop: 10, fontSize: 25,
                             fontWeight: 'bold'}}>
-                                John Doe
+                                John Doedsdsd
                             </Text>
                         </View>
                         <View style={styles.action}>
