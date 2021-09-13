@@ -7,7 +7,7 @@ import SignUp from './src/app/screens/Parent/SignUp';
 import WorkerSignIn from './src/app/screens/Worker/WorkerSignIn';
 import ParentDashboard from './src/app/screens/Parent/ParentDashboard';
 import ParentProfile from './src/app/screens/Parent/ParentProfile';
-import EditProfileScreen from './src/app/screens/Parent/EditaProfileScreen';
+import EditProfileScreen from './src/app/screens/Parent/EditProfileScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -17,9 +17,9 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
       <Stack.Screen name="Edit Profile" component={EditProfileScreen} options={{ title: 'Child Immunization - Edit Profile.' }}/>  
-      {/* <Stack.Screen name="ParentDashboard" component={ParentDashboard} options={{ title: 'Child Immunization - Parent.' }}/> */}
-        {/* <Stack.Screen name="Splash" component={Splash} options={{ title: 'Child Immunization.' }}/> */}
-        {/* <Stack.Screen name="Login" component={Login} options={{ title: 'Child Immunization - Login' }}/>
+      {/* <Stack.Screen name="ParentDashboard" component={ParentDashboard} options={{ title: 'Child Immunization - Parent.' }}/>
+        <Stack.Screen name="Splash" component={Splash} options={{ title: 'Child Immunization.' }}/>
+        <Stack.Screen name="Login" component={Login} options={{ title: 'Child Immunization - Login' }}/>
         <Stack.Screen name="SignUp" component={SignUp} options={{ title: "Parent's Registration" }}/>
         <Stack.Screen name="WorkerSignIn" component={WorkerSignIn} options={{ title: "Worker's Login" }}/> */}
       </Stack.Navigator>
