@@ -16,12 +16,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="Edit Profile" component={EditProfileScreen} options={{ title: 'Child Immunization - Edit Profile.' }}/>  
-      {/* <Stack.Screen name="ParentDashboard" component={ParentDashboard} options={{ title: 'Child Immunization - Parent.' }}/>
-        <Stack.Screen name="Splash" component={Splash} options={{ title: 'Child Immunization.' }}/>
-        <Stack.Screen name="Login" component={Login} options={{ title: 'Child Immunization - Login' }}/>
-        <Stack.Screen name="SignUp" component={SignUp} options={{ title: "Parent's Registration" }}/>
-        <Stack.Screen name="WorkerSignIn" component={WorkerSignIn} options={{ title: "Worker's Login" }}/> */}
+        {/* <Stack.Screen name="Edit Profile" component={EditProfileScreen} options={{ title: 'Child Immunization - Edit Profile.' }}/>   */}
+        {/* <Stack.Screen name="ParentDashboard" component={ParentDashboard} options={{ title: 'Child Immunization - Parent.' }}/> */}
+        <Stack.Screen name="Splash" component={Splash} options={{ title: 'Child Immunization.' }} />
+        <Stack.Screen name="Login" component={Login} options={{ title: 'Child Immunization - Login' }} />
+        <Stack.Screen name="SignUp" component={SignUp} options={{ title: "Parent's Registration" }} />
+        <Stack.Screen name="WorkerSignIn" component={WorkerSignIn} options={{ title: "Worker's Login" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
