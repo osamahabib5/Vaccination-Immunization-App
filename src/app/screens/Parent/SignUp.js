@@ -2,22 +2,46 @@ import React, { useState } from 'react';
 import { ScrollView, Alert, SafeAreaView, StyleSheet, Text, TextInput, View, Button, TouchableOpacity, Image } from 'react-native';
 import { styles } from '../../styles/style';
 import LinearGradient from 'react-native-linear-gradient';
-import { axios } from 'axios';
-
-const ParentSignup = () => {
-    if (parentDetails.email.length > 0 && parentDetails.name.length > 0 && parentDetails.cnic.length > 0 && parentDetails.password.length > 0
-        && parentDetails.addr.length > 0 && parentDetails.area.length > 0 && parentDetails.city.length > 0){
-            Alert.alert("Data", JSON.stringify(parentDetails))
-    }
-}
+import axios from 'axios';
+import baseUrl from '../../baseUrl';
 
 export default function SignUp({ navigation, route }) {
-    let [parentDetails, setParentDetails] = useState({ email: "", name: "", cnic: "", password: "", addr: "",area: "",
-    city: ""
-})
-    const { email, name, cnic, password, addr, area, city} = parentDetails;
-    return (
+    const [parentDetails, setParentDetails] = useState({
+        email: null, name: null, cnic: null, password: null, addr: null, area: null,
+        city: null
+    })
+    let { email, name, cnic, password, addr, area, city } = parentDetails;
 
+    const ParentSignup = () => {
+        if (email && name && cnic && password && addr && area && city) {
+            axios.post(baseUrl + "/users/create", {
+                email: email,
+                name: name,
+                cnic: cnic,
+                userType: "parent",
+                password: password,
+                address: {
+                    addr: addr,
+                    area: area,
+                    city: city
+                }
+            }).then(function (response) {
+                Alert.alert("Sign Up", "User created successfully!");
+            }).catch(function (error) {
+                // handle error
+                Alert.alert("Error", JSON.stringify(error));
+            }).then(
+                setParentDetails({
+                    ...parentDetails,
+                    email: null, name: null, cnic: null, password: null, addr: null, area: null,
+                    city: null
+                })
+            )
+        } else {
+            Alert.alert("SignUp", "Please fill all the details!")
+        }
+    }
+    return (
         <ScrollView style={styles.signup_screen}>
             <LinearGradient style={{ alignItems: 'center', height: '100%', padding: 40 }} colors={['#e6f7fc', '#e6f7fc', '#0df2c9']}>
                 <View style={styles.inputView}>
@@ -26,8 +50,10 @@ export default function SignUp({ navigation, route }) {
                         placeholder="Name"
                         placeholderTextColor="#00000087"
                         value={name}
+                        name="name"
                         onChangeText={(e) => {
                             setParentDetails({
+                                ...parentDetails,
                                 name: e
                             })
                         }}
@@ -40,8 +66,10 @@ export default function SignUp({ navigation, route }) {
                         placeholderTextColor="#00000087"
                         keyboardType='email-address'
                         value={email}
+                        name="email"
                         onChangeText={(e) => {
                             setParentDetails({
+                                ...parentDetails,
                                 email: e
                             })
                         }}
@@ -54,8 +82,10 @@ export default function SignUp({ navigation, route }) {
                         placeholderTextColor="#00000087"
                         keyboardType='number-pad'
                         value={cnic}
+                        name="cnic"
                         onChangeText={(e) => {
                             setParentDetails({
+                                ...parentDetails,
                                 cnic: e
                             })
                         }}
@@ -67,8 +97,10 @@ export default function SignUp({ navigation, route }) {
                         placeholder="Password"
                         placeholderTextColor="#00000087"
                         value={password}
+                        name="password"
                         onChangeText={(e) => {
                             setParentDetails({
+                                ...parentDetails,
                                 password: e
                             })
                         }}
@@ -80,8 +112,10 @@ export default function SignUp({ navigation, route }) {
                         style={styles.TextInput}
                         placeholder="Address"
                         value={addr}
+                        name="addr"
                         onChangeText={(e) => {
                             setParentDetails({
+                                ...parentDetails,
                                 addr: e
                             })
                         }}
@@ -93,9 +127,11 @@ export default function SignUp({ navigation, route }) {
                         style={styles.TextInput}
                         placeholder="Area"
                         placeholderTextColor="#00000087"
-                        value = {area}
+                        value={area}
+                        name="area"
                         onChangeText={(e) => {
                             setParentDetails({
+                                ...parentDetails,
                                 area: e
                             })
                         }}
@@ -106,9 +142,11 @@ export default function SignUp({ navigation, route }) {
                         style={styles.TextInput}
                         placeholder="City"
                         placeholderTextColor="#00000087"
-                        value = {city}
+                        value={city}
+                        name="city"
                         onChangeText={(e) => {
                             setParentDetails({
+                                ...parentDetails,
                                 city: e
                             })
                         }}
