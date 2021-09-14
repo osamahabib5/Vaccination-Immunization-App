@@ -5,10 +5,14 @@ import ChildrenInformation from './ChildrenInformation/ChildrenInformation'
 function ParentDashboard() {
     return (
         <View style={styles.container}>
-            <Text style={styles.textInput}>Children Information</Text>
-            <View>
-                <ChildrenInformation />
+            <View style={{alignContent: 'space-around' }}>
+                <Text style={styles.textInput}>Children Information</Text>
             </View>
+            <View style={{alignSelf: 'center' }}>
+                <ChildrenInformation />
+                <ChildrenInformation />
+                <ChildrenInformation />
+            </View>    
         </View>
     )
 }
@@ -16,12 +20,12 @@ function ParentDashboard() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#e6f7fc'
+        backgroundColor: '#e6f7fc',
     },
     textInput: {
         // marginTop: Platform.OS === 'ios' ? 0 : -12,
         color: 'black',
-        fontSize: 30,
+        fontSize:20,
         textAlign: 'center',
     },
 })
