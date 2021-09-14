@@ -5,12 +5,17 @@ import LinearGradient from 'react-native-linear-gradient';
 import { axios } from 'axios';
 
 const ParentSignup = () => {
-    Alert.alert("My Message", "Hello")
+    if (parentDetails.email.length > 0 && parentDetails.name.length > 0 && parentDetails.cnic.length > 0 && parentDetails.password.length > 0
+        && parentDetails.addr.length > 0 && parentDetails.area.length > 0 && parentDetails.city.length > 0){
+            Alert.alert("Data", JSON.stringify(parentDetails))
+    }
 }
 
 export default function SignUp({ navigation, route }) {
-    const [parentDetails, setParentDetails] = useState({ email: "", name: "", cnic: "", password: "", address: "" })
-    const { email, name, cnic, password, address } = parentDetails;
+    let [parentDetails, setParentDetails] = useState({ email: "", name: "", cnic: "", password: "", addr: "",area: "",
+    city: ""
+})
+    const { email, name, cnic, password, addr, area, city} = parentDetails;
     return (
 
         <ScrollView style={styles.signup_screen}>
@@ -20,8 +25,8 @@ export default function SignUp({ navigation, route }) {
                         style={styles.TextInput}
                         placeholder="Name"
                         placeholderTextColor="#00000087"
-                        value = {name}
-                        onChangeText = {(e)=>{
+                        value={name}
+                        onChangeText={(e) => {
                             setParentDetails({
                                 name: e
                             })
@@ -34,8 +39,8 @@ export default function SignUp({ navigation, route }) {
                         placeholder="Email Address"
                         placeholderTextColor="#00000087"
                         keyboardType='email-address'
-                        value = {email}
-                        onChangeText = {(e)=>{
+                        value={email}
+                        onChangeText={(e) => {
                             setParentDetails({
                                 email: e
                             })
@@ -48,8 +53,8 @@ export default function SignUp({ navigation, route }) {
                         placeholder="CNIC"
                         placeholderTextColor="#00000087"
                         keyboardType='number-pad'
-                        value = {cnic}
-                        onChangeText = {(e)=>{
+                        value={cnic}
+                        onChangeText={(e) => {
                             setParentDetails({
                                 cnic: e
                             })
@@ -61,8 +66,8 @@ export default function SignUp({ navigation, route }) {
                         style={styles.TextInput}
                         placeholder="Password"
                         placeholderTextColor="#00000087"
-                        value = {password}
-                        onChangeText = {(e)=>{
+                        value={password}
+                        onChangeText={(e) => {
                             setParentDetails({
                                 password: e
                             })
@@ -74,20 +79,26 @@ export default function SignUp({ navigation, route }) {
                     <TextInput
                         style={styles.TextInput}
                         placeholder="Address"
-                        value = {address}
-                        onChangeText = {(e)=>{
+                        value={addr}
+                        onChangeText={(e) => {
                             setParentDetails({
-                                address: e
+                                addr: e
                             })
                         }}
                         placeholderTextColor="#00000087"
                     />
                 </View>
-                {/* <View style={styles.inputView}>
+                <View style={styles.inputView}>
                     <TextInput
                         style={styles.TextInput}
                         placeholder="Area"
                         placeholderTextColor="#00000087"
+                        value = {area}
+                        onChangeText={(e) => {
+                            setParentDetails({
+                                area: e
+                            })
+                        }}
                     />
                 </View>
                 <View style={styles.inputView}>
@@ -95,8 +106,14 @@ export default function SignUp({ navigation, route }) {
                         style={styles.TextInput}
                         placeholder="City"
                         placeholderTextColor="#00000087"
+                        value = {city}
+                        onChangeText={(e) => {
+                            setParentDetails({
+                                city: e
+                            })
+                        }}
                     />
-                </View> */}
+                </View>
                 <TouchableOpacity
                     onPress={() => {
                         navigation.navigate('SignUp');
