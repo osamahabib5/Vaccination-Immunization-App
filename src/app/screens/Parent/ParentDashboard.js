@@ -5,13 +5,13 @@ import ChildrenInformation from './ChildrenInformation/ChildrenInformation'
 function ParentDashboard() {
     return (
         <View style={styles.container}>
-            <View style={{alignContent: 'space-around' }}>
+            <View style={{marginTop: 18 }}>
                 <Text style={styles.textInput}>Children Information</Text>
             </View>
             <View style={{alignSelf: 'center' }}>
                 <ChildrenInformation />
-                <ChildrenInformation />
-                <ChildrenInformation />
+                {/* <ChildrenInformation />
+                <ChildrenInformation /> */}
             </View>    
         </View>
     )
