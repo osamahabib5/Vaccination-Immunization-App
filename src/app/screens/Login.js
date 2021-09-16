@@ -24,6 +24,7 @@ export default function Login({ navigation, route }) {
                 email: null,
                 password: null
               })
+              navigation.navigate("ParentDrawer");
             }
           }
         ]);

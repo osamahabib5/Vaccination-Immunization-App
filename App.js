@@ -15,7 +15,7 @@ export default function App() {
         <Stack.Screen name="SignUp" component={SignUp} options={{ title: "Parent's Registration" }} />
         <Stack.Screen name="Login" component={Login} options={{ title: 'Child Immunization - Login' }} />
         <Stack.Screen name="WorkerSignIn" component={WorkerSignIn} options={{ title: "Worker's Login" }} />
-        {/* <Stack.Screen name="ParentDrawer" component={DrawerNavigator} options={{ headerShown: false, title: 'Parent Dashboard.' }} /> */}
+        <Stack.Screen name="ParentDrawer" component={DrawerNavigator} options={{ headerShown: false, title: 'Parent Dashboard.' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
