@@ -5,23 +5,17 @@ import Splash from './src/app/screens/Splash';
 import Login from './src/app/screens/Login';
 import SignUp from './src/app/screens/Parent/SignUp';
 import WorkerSignIn from './src/app/screens/Worker/WorkerSignIn';
-import ParentDashboard from './src/app/screens/Parent/ParentDashboard';
-import ParentProfile from './src/app/screens/Parent/ParentProfile';
-import EditProfileScreen from './src/app/screens/Parent/EditProfileScreen';
-
-
+import DrawerNavigator from './src/app/navigation/DrawerNavigator';
 const Stack = createNativeStackNavigator();
-
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-      {/* <Stack.Screen name="SignUp" component={SignUp} options={{ title: "Parent's Registration" }} /> */}
-        {/* <Stack.Screen name="Edit Profile" component={EditProfileScreen} options={{ title: 'Child Immunization - Edit Profile.' }}/>   */}
-        {/* <Stack.Screen name="ParentDashboard" component={ParentDashboard} options={{ title: 'Child Immunization - Parent.' }} /> */}
-        {/* <Stack.Screen name="Splash" component={Splash} options={{ title: 'Child Immunization.' }} /> */}
+      <Stack.Navigator >
+        <Stack.Screen name="Splash" component={Splash} options={{ title: 'Child Immunization.' }} />
+        <Stack.Screen name="SignUp" component={SignUp} options={{ title: "Parent's Registration" }} />
         <Stack.Screen name="Login" component={Login} options={{ title: 'Child Immunization - Login' }} />
-        {/* <Stack.Screen name="WorkerSignIn" component={WorkerSignIn} options={{ title: "Worker's Login" }} /> */}
+        <Stack.Screen name="WorkerSignIn" component={WorkerSignIn} options={{ title: "Worker's Login" }} />
+        {/* <Stack.Screen name="ParentDrawer" component={DrawerNavigator} options={{ headerShown: false, title: 'Parent Dashboard.' }} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

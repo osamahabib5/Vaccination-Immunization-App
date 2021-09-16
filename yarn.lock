@@ -1232,6 +1232,15 @@
     "query-string" "^7.0.0"
     "react-is" "^16.13.0"
 
+"@react-navigation/drawer@^6.1.4":
+  "integrity" "sha512-lmWV/Hxd60LFLsHESOXkDXZmzqpXHoRhBdaxk5FvQHXSBYm+ZB0bP9vq5nTCzUby513wTyM381GBujdgYWCGRA=="
+  "resolved" "https://registry.npmjs.org/@react-navigation/drawer/-/drawer-6.1.4.tgz"
+  "version" "6.1.4"
+  dependencies:
+    "@react-navigation/elements" "^1.1.0"
+    "color" "^3.1.3"
+    "warn-once" "^0.1.0"
+
 "@react-navigation/elements@^1.1.0":
   "integrity" "sha512-jZncciZPGuoP6B6f+Wpf6MYSSYy86B2HJDbFTCtT5xZV0w6V9GgCeqvSTOEAxifZrmKl8uDxsr0GrIxgQE8NxA=="
   "resolved" "https://registry.npmjs.org/@react-navigation/elements/-/elements-1.1.0.tgz"
@@ -2277,7 +2286,7 @@
     "color-name" "^1.0.0"
     "simple-swizzle" "^0.2.2"
 
-"color@^3.1.2":
+"color@^3.1.2", "color@^3.1.3":
   "integrity" "sha512-aBl7dZI9ENN6fUGC7mWpMTPNHmWUSNan9tuWN6ahh5ZLNk9baLJOnSMlrQkHcrfFgz2/RigjUVAjdx36VcemKA=="
   "resolved" "https://registry.npmjs.org/color/-/color-3.2.1.tgz"
   "version" "3.2.1"
@@ -5710,7 +5719,7 @@
     "react-native-ratings" "8.0.4"
     "react-native-size-matters" "^0.3.1"
 
-"react-native-gesture-handler@*":
+"react-native-gesture-handler@*", "react-native-gesture-handler@^1.10.3", "react-native-gesture-handler@>= 1.0.0":
   "integrity" "sha512-cBGMi1IEsIVMgoox4RvMx7V2r6bNKw0uR1Mu1o7NbuHS6BRSVLq0dP34l2ecnPlC+jpWd3le6Yg1nrdCjby2Mw=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz"
   "version" "1.10.3"
@@ -5752,10 +5761,10 @@
   dependencies:
     "lodash" "^4.17.15"
 
-"react-native-reanimated@*", "react-native-reanimated@^2.2.1":
-  "integrity" "sha512-uyAlqFZCcriL3hPXq5zJ4KqAjxBoeinYoJogTIpwlEhmYfsP6oRNktq3PyYCu6/Dj5dXp7MXUcZInXyVSi/c9Q=="
-  "resolved" "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-2.2.1.tgz"
-  "version" "2.2.1"
+"react-native-reanimated@*", "react-native-reanimated@^2.2.2", "react-native-reanimated@>= 1.0.0":
+  "integrity" "sha512-Lfv4ogbNLU9x3DqhXUFza9pnzyTvPrw5xGC1wWA6aGXqZgyaikNLgC5dNWzxVbfEwRdOuLPFsai3LAcIM92TCg=="
+  "resolved" "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-2.2.2.tgz"
+  "version" "2.2.2"
   dependencies:
     "@babel/plugin-transform-object-assign" "^7.10.4"
     "fbjs" "^3.0.0"
