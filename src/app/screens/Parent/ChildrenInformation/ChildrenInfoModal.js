@@ -1,23 +1,27 @@
 import React from 'react'
-import { View, Text, Modal, TouchableOpacity, StyleSheet } from 'react-native'
-function ChildrenInfoModal() {
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+function ChildrenInfoModal(props) {
     return (
         <View style = {styles.container}>
-            <Text style = {styles.heading}>
-                Child Details
+            <Text>
+                Child Detail
             </Text>
+            <TouchableOpacity onPress = {props.closeModal}>
+                <Text>
+                    Close
+                </Text>
+            </TouchableOpacity>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         backgroundColor: "#e4f0ea",
+        width: "70%",
         marginTop: 50,
-        width: 350,
         alignSelf: 'center',
-        height: "300"
+        flex: 1,
     }          
 })
 export default ChildrenInfoModal

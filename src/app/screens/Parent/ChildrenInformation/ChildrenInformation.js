@@ -6,6 +6,10 @@ import ChildrenInfoModal from './ChildrenInfoModal';
 
 function ChildrenInformation({ navigation }) {
     const [modalVisible, setModalVisible] = useState(false);
+
+    const closeModal = () => {
+        setModalVisible(false);
+    }
     return (
 
         <View style={{ flexDirection: 'column', marginTop: 20, alignSelf: 'center' }}>
@@ -36,14 +40,13 @@ function ChildrenInformation({ navigation }) {
             })}
             <Modal
                 animationType="slide"
-                transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
                     Alert.alert("Modal has been closed.");
                     setModalVisible(!modalVisible);
                 }}
             >
-                <ChildrenInfoModal />
+                <ChildrenInfoModal closeModal={closeModal} />
             </Modal>
         </View>
     )
@@ -62,6 +65,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 40,
         marginLeft: 20
+    },
+    growthHeading: {
+
     }
 })
 
