@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, Modal, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, Modal, TouchableOpacity, StyleSheet , Alert} from 'react-native'
 import ChildDetails from './ChildDetails';
 import ChildrenInfoModal from './ChildrenInfoModal';
 import DietPlanModal from './DietPlanModal';
@@ -42,6 +42,7 @@ function ChildrenInformation(props, { navigation }) {
             <Modal
                 animationType="slide"
                 visible={modalVisible}
+                transparent={true}
                 onRequestClose={() => {
                     Alert.alert("Modal has been closed.");
                     setModalVisible(!modalVisible);
@@ -61,7 +62,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         textAlign: 'center',
         marginTop: 20,
-        width: 100
+        width: 100,
+        fontSize: 15,
+        fontWeight: 'bold'
     },
     ViewDetailsButton: {
         backgroundColor: '#1796b3',
