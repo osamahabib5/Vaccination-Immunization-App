@@ -1,28 +1,27 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import ChildrenInformation from './ChildrenInformation/ChildrenInformation'
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import React, { useState } from 'react'
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import ChildrenInformation from './ChildrenInformation/ChildrenInformation';
 import ChildrenDietPlan from './ChildrenDietPlan/ChildrenDietPlan';
 
 function ParentDashboard() {
+    const [buttondescription, setbuttondescription] = useState("View Details")
     return (
-        <View style={styles.container}>
-            <View style={{ marginTop: 18 }}>
-                <Text style={styles.textInput}>Children Information</Text>
-            </View>
-            <View style={{ alignSelf: 'center' }}>
-                <ChildrenInformation />
-                {/* <ChildrenInformation />
-                <ChildrenInformation /> */}
-            </View>
-            <View style = {{marginTop: 25}}>
-                <Text style={styles.textInput}>Children Diet Plan</Text>
+        <ScrollView>
+            <View style={styles.container}>
+                <View style={{ marginTop: 18 }}>
+                    <Text style={styles.textInput}>Children Information</Text>
+                </View>
                 <View style={{ alignSelf: 'center' }}>
-                    <ChildrenDietPlan />
+                    <ChildrenInformation buttondescription="View Details" />
+                </View>
+                <View style={{ marginTop: 25 }}>
+                    <Text style={styles.textInput}>Children Diet Plan</Text>
+                    <View style={{ alignSelf: 'center' }}>
+                        <ChildrenInformation buttondescription="View Diet Plan" />
+                    </View>
                 </View>
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
