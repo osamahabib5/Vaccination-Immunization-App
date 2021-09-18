@@ -1,6 +1,5 @@
 import React from 'react'
 import { Text, View, StyleSheet, TouchableOpacity, TextInput } from 'react-native'
-import ModalDropdown from 'react-native-modal-dropdown';
 export default function DietPlanModal(props) {
     return (
         <View style={styles.container}>
@@ -10,7 +9,9 @@ export default function DietPlanModal(props) {
                     alignItems: 'center', flexDirection: 'row',
                     justifyContent: 'center'
                 }}>
-                    <Text style={styles.label}>Height</Text>
+                    <View>
+                        <Text style={styles.label}>Height</Text>
+                    </View>
                     <View style={{ marginLeft: 20 }}>
                         <TextInput
                             placeholder="height"
@@ -68,11 +69,11 @@ export default function DietPlanModal(props) {
 }
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#e4f0ea",
-        width: "80%",
+        width: "90%",
         marginTop: 50,
         alignSelf: 'center',
         flex: 1,
+        backgroundColor: "#e1e8e7"
     },
     textInput: {
         // marginTop: Platform.OS === 'ios' ? 0 : -12,
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
         fontSize: 19,
         textAlign: 'center',
         justifyContent: 'center',
-        width: 90
+        width: 100
     },
     SubmitOptions: {
         marginTop: 40
