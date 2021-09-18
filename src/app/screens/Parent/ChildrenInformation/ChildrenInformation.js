@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { View, Text, Modal, TouchableOpacity, StyleSheet } from 'react-native'
 import ChildDetails from './ChildDetails';
 import ChildrenInfoModal from './ChildrenInfoModal';
+import DietPlanModal from './DietPlanModal';
 
 
-function ChildrenInformation({ navigation }) {
+function ChildrenInformation(props, { navigation }) {
     const [modalVisible, setModalVisible] = useState(false);
 
     const closeModal = () => {
@@ -32,7 +33,7 @@ function ChildrenInformation({ navigation }) {
                                 }} style={styles.ViewDetailsButton}>
                                 <Text style={{
                                     color: '#FFFFFF', textAlign: 'center', fontSize: 13, fontWeight: "500"
-                                }}>View Details</Text>
+                                }}>{props.buttondescription}</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -46,7 +47,10 @@ function ChildrenInformation({ navigation }) {
                     setModalVisible(!modalVisible);
                 }}
             >
-                <ChildrenInfoModal closeModal={closeModal} />
+                {props.buttondescription === "View Details" ?
+                    <ChildrenInfoModal closeModal={closeModal} /> :
+                    <DietPlanModal closeModal={closeModal} />
+                }
             </Modal>
         </View>
     )

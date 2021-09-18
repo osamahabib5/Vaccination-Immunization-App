@@ -19,11 +19,6 @@ export default function Login({ navigation, route }) {
         Alert.alert("Sign In", "Login Successful!", [
           {
             text: "OK", onPress: () => {
-              setLoginDetails({
-                ...parentLogin,
-                email: null,
-                password: null
-              })
               navigation.navigate("ParentDrawer");
             }
           }
@@ -39,7 +34,7 @@ export default function Login({ navigation, route }) {
         })
       )
     } else {
-      Alert.alert("SignUp", "Please fill all the details!")
+      Alert.alert("SignIn", "Please fill all the details!")
     }
   }
   return (
