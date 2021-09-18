@@ -7,6 +7,7 @@ function DrawerNavigator() {
     return (
         <Drawer.Navigator>
             <Drawer.Screen name="ParentDashboard" component={ParentDashboard} />
+            WorkerDrawer
             <Drawer.Screen name="ParentProfile" component={ParentProfile} />
         </Drawer.Navigator>
     )
