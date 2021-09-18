@@ -1,12 +1,34 @@
-import React, { Component, useState } from 'react';
-import { SafeAreaView, StyleSheet, Text, TextInput, View, Button, TouchableOpacity, Image } from 'react-native';
+import React, { useState } from 'react';
+import { Alert, Text, TextInput, View, TouchableOpacity, Image } from 'react-native';
 import { styles } from '../../styles/style';
-import { Icon } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient';
-
+import axios from 'axios';
+import baseUrl from "../../baseUrl";
 export default function WorkerSignIn({ navigation, route }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [LoginDetails, setLoginDetails] = useState({ email: null, password: null })
+  let { email, password } = LoginDetails;
+
+  const WorkerLogin = () => {
+    if (email && password) {
+      axios.post(baseUrl + "/users/login", {
+        username: email,
+        password: password,
+      }).then(function (response) {
+        Alert.alert("Sign In", "Login Successful!", [
+          {
+            text: "OK", onPress: () => {
+              navigation.navigate("WorkerDrawer");
+            }
+          }
+        ]);
+      }).catch(function (error) {
+        // handle error
+        Alert.alert("Sign In", "Please enter the correct credentials! ");
+      })
+    } else {
+      Alert.alert("SignIn", "Please fill all the details!")
+    }
+  }
   return (
     <View style={styles.container}>
       <LinearGradient style={styles.linearGradient} colors={['#e6f7fc', '#e6f7fc', '#0df2c9']}>
@@ -20,8 +42,15 @@ export default function WorkerSignIn({ navigation, route }) {
           <View style={styles.inputView}>
             <TextInput
               style={styles.TextInput}
-              placeholder="Worker ID"
+              placeholder="Email Address"
               placeholderTextColor="#00000087"
+              keyboardType='email-address'
+              onChangeText={(e) => {
+                setLoginDetails({
+                  ...LoginDetails,
+                  email: e
+                })
+              }}
             />
           </View>
           <View style={styles.inputView}>
@@ -30,17 +59,22 @@ export default function WorkerSignIn({ navigation, route }) {
               placeholder="Password"
               placeholderTextColor="#00000087"
               secureTextEntry={true}
+              onChangeText={(e) => {
+                setLoginDetails({
+                  ...LoginDetails,
+                  password: e
+                })
+              }}
             />
           </View>
         </View>
         <View style={{ flex: 1, flexDirection: 'column', position: "relative", marginBottom: "0%", justifyContent: 'center' }}>
           <TouchableOpacity
-            onPress={() =>
-              navigation.navigate('Home')
-            } style={{ backgroundColor: '#1796b3', width: 200, height:50, justifyContent:'center', borderRadius: 30, margin: 6 }}>
+            onPress={WorkerLogin} style={{ backgroundColor: '#1796b3', width: 200, height: 50, justifyContent: 'center', borderRadius: 30, margin: 6 }}>
             <Text style={{
-              color: '#FFFFFF', textAlign: 'center', fontSize: 18, fontWeight: "300"}}>Proceed</Text>
-          </TouchableOpacity>          
+              color: '#FFFFFF', textAlign: 'center', fontSize: 18, fontWeight: "300"
+            }}>Proceed</Text>
+          </TouchableOpacity>
         </View>
 
       </LinearGradient>

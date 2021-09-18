@@ -1,7 +1,7 @@
-import React from 'react'
+import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ParentDashboard from '../screens/Parent/ParentDashboard';
-import ParentProfile from '../screens/Parent/ParentProfile';
+import EditProfileScreen from '../screens/Parent/EditProfileScreen';
 const Drawer = createDrawerNavigator();
 function DrawerNavigator() {
     return (
@@ -9,6 +9,8 @@ function DrawerNavigator() {
             <Drawer.Screen name="ParentDashboard" component={ParentDashboard} />
             WorkerDrawer
             <Drawer.Screen name="ParentProfile" component={ParentProfile} />
+            <Drawer.Screen name="Home" component={ParentDashboard} />
+            <Drawer.Screen name="My Profile" component={EditProfileScreen} />
         </Drawer.Navigator>
     )
 }
