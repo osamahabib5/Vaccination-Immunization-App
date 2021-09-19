@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, Modal, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, Modal, TouchableOpacity, StyleSheet, Alert } from 'react-native'
 import ChildDetails from './ChildDetails';
 import ChildrenInfoModal from './ChildrenInfoModal';
 import DietPlanModal from './DietPlanModal';
@@ -7,7 +7,7 @@ import DietPlanModal from './DietPlanModal';
 
 function ChildrenInformation(props, { navigation }) {
     const [modalVisible, setModalVisible] = useState(false);
-
+    const [childid, setchildid] = useState(0);
     const closeModal = () => {
         setModalVisible(false);
     }
@@ -30,7 +30,10 @@ function ChildrenInformation(props, { navigation }) {
                                     // navigation.navigate('SignUp');
                                     // ParentSignup();
                                     setModalVisible(true);
-                                }} style={styles.ViewDetailsButton}>
+                                    setchildid(data.id);
+
+                                }} style={styles.ViewDetailsButton}
+                            >
                                 <Text style={{
                                     color: '#FFFFFF', textAlign: 'center', fontSize: 13, fontWeight: "500"
                                 }}>{props.buttondescription}</Text>
@@ -42,13 +45,16 @@ function ChildrenInformation(props, { navigation }) {
             <Modal
                 animationType="slide"
                 visible={modalVisible}
+                transparent={true}
                 onRequestClose={() => {
                     Alert.alert("Modal has been closed.");
                     setModalVisible(!modalVisible);
                 }}
             >
                 {props.buttondescription === "View Details" ?
-                    <ChildrenInfoModal closeModal={closeModal} /> :
+                    <ChildrenInfoModal closeModal={closeModal} 
+                    childid = {childid}
+                    /> :
                     <DietPlanModal closeModal={closeModal} />
                 }
             </Modal>
@@ -61,7 +67,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         textAlign: 'center',
         marginTop: 20,
-        width: 100
+        width: 100,
+        fontSize: 15,
+        fontWeight: 'bold'
     },
     ViewDetailsButton: {
         backgroundColor: '#1796b3',

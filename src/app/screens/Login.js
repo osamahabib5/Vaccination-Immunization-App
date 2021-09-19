@@ -1,7 +1,6 @@
-import React, { Component, useState } from 'react';
-import { SafeAreaView, StyleSheet, Text, TextInput, View, Button, TouchableOpacity, Image, Alert } from 'react-native';
+import React, { useState } from 'react';
+import {  Text, TextInput, View, Button, TouchableOpacity, Image, Alert } from 'react-native';
 import { styles } from '../styles/style';
-import { Icon } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient';
 import axios from 'axios';
 import baseUrl from '../baseUrl';

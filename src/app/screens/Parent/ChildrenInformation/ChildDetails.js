@@ -7,7 +7,7 @@ const ChildDetails = [{
     address: "15-C Modal Town, Lahore",
     dateOfBirth: "03-02-1997",
     gender: "Male",
-    birthPlace: "Lahore"
+    birthPlace: "Lahore, Pakistan"
 },
 {
     id: 1,
@@ -18,7 +18,7 @@ const ChildDetails = [{
     address: "14-E Modal Town, Lahore",
     dateOfBirth: "03-02-1989",
     gender: "Male",
-    birthPlace: "Lahore"
+    birthPlace: "Lahore, Pakistan."
 }, {
     id: 2   ,
     name: "Noman Ali",
@@ -28,7 +28,7 @@ const ChildDetails = [{
     address: "14-E Modal Town, Lahore",
     dateOfBirth: "03-02-1989",
     gender: "Male",
-    birthPlace: "Lahore"
+    birthPlace: "Lahore, Pakistan."
 }
 ]
 

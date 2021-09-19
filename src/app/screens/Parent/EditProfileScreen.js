@@ -7,9 +7,7 @@ import {
     StyleSheet
 } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Feather from 'react-native-vector-icons/Feather';
 import { TextInput } from 'react-native';
 
 function EditProfileScreen() {
