@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {  Text, TextInput, View, Button, TouchableOpacity, Image, Alert } from 'react-native';
+import { Text, TextInput, View, Button, TouchableOpacity, Image, Alert } from 'react-native';
 import { styles } from '../styles/style';
 import LinearGradient from 'react-native-linear-gradient';
 import axios from 'axios';
@@ -8,30 +8,43 @@ import baseUrl from '../baseUrl';
 export default function Login({ navigation, route }) {
   const [LoginDetails, setLoginDetails] = useState({ email: null, password: null })
   let { email, password } = LoginDetails;
-
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
   const parentLogin = () => {
     if (email && password) {
-      axios.post(baseUrl + "/users/login", {
-        username: email,
-        password: password,
-      }).then(function (response) {
-        Alert.alert("Sign In", "Login Successful!", [
-          {
-            text: "OK", onPress: () => {
-              navigation.navigate("ParentDrawer");
+      if (validateEmail(email)) {
+        axios.post(baseUrl + "/users/login", {
+          username: email,
+          password: password,
+        }).then(function (response) {
+          Alert.alert("Sign In", "Login Successful!", [
+            {
+              text: "OK", onPress: () => {
+                setLoginDetails({
+                  ...parentLogin,
+                  email: null,
+                  password: null
+                });
+                navigation.navigate("ParentDrawer");
+              }
             }
-          }
-        ]);
-      }).catch(function (error) {
-        // handle error
-        Alert.alert("Sign In", error);
-      }).then(
-        setLoginDetails({
-          ...parentLogin,
-          email: null,
-          password: null
-        })
-      )
+          ]);
+        }).catch(function (error) {
+          // handle error
+          Alert.alert("Sign In", error);
+        }).then(
+          setLoginDetails({
+            ...parentLogin,
+            email: null,
+            password: null
+          })
+        )
+      }
+      else {
+        Alert.alert("SignIn", "Please enter a valid email address!")
+      }
     } else {
       Alert.alert("SignIn", "Please fill all the details!")
     }

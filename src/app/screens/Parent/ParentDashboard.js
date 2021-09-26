@@ -7,7 +7,7 @@ import LinearGradient from 'react-native-linear-gradient';
 function ParentDashboard() {
     const [buttondescription, setbuttondescription] = useState("View Details")
     return (
-        <ScrollView>
+        <ScrollView style={styles.container}>
             <View style={styles.container}>
                 <LinearGradient colors={['#e6f7fc', '#e6f7fc', '#0df2c9']}>
                     <View style={{ marginTop: 18 }}>

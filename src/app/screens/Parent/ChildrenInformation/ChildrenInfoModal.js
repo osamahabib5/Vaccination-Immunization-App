@@ -1,15 +1,14 @@
 import React from 'react'
 import {
-    Avatar,
     Title,
     Caption,
-    Text,
-    TouchableRipple
+    Text
 } from "react-native-paper";
 import ChildDetails from './ChildDetails';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // import Share from 'react-native-share';
-import { View, SafeAreaView, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native'
+import { Button } from 'react-native-elements';
 
 function ChildrenInfoModal(props) {
     return (
@@ -19,12 +18,6 @@ function ChildrenInfoModal(props) {
                     flexDirection: 'row',
                     marginTop: 15
                 }}>
-                    {/* <View>
-                        <Avatar.Image
-                            source = {require('../../')}
-                            size={80}
-                        />
-                    </View> */}
                     <View>
                         <Title style={[styles.title, {
                             marginTop: 15,
@@ -41,22 +34,25 @@ function ChildrenInfoModal(props) {
                     <Text>{ChildDetails[props.childid].address}</Text>
                 </View>
                 <View style={styles.row}>
-                    <Icon name="birthday-cake" size={20} color="#777777" />
-                    <Text>{ChildDetails[props.childid].dateOfBirth}</Text>
+                    <Text>DOB: {ChildDetails[props.childid].dateOfBirth}</Text>
                 </View>
                 <View style={styles.row}>
                     <Icon name="phone" size={20} color="#777777" />
                     <Text>Contact No: {ChildDetails[props.childid].contactNo}</Text>
                 </View>
                 <View style={styles.row}>
-                    <Icon name={ChildDetails[props.childid].gender 
-                    === "Male" ? "human-male" : "human-female"} 
-                    size={20} color="#777777" />
+                    <Icon name={ChildDetails[props.childid].gender
+                        === "Male" ? "human-male" : "human-female"}
+                        size={20} color="#777777" />
                     <Text>{ChildDetails[props.childid].gender}</Text>
                 </View>
                 <View style={styles.row}>
-                    <Icon name="confirmation-number" size={20} color="#777777" />
-                    <Text>{ChildDetails[props.childid].parentCNIC}</Text>
+                    <Text>CNIC: {ChildDetails[props.childid].parentCNIC}</Text>
+                </View>
+                <View style={styles.row, { marginTop: 20, alignSelf: 'center' }}>
+                    <TouchableOpacity onPress={props.closeModal}>
+                        <Text style={styles.closeButton}>Hide</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </SafeAreaView>
@@ -70,9 +66,11 @@ const styles = StyleSheet.create({
         marginTop: 50,
         alignSelf: 'center',
         flex: 1,
-    }, userInfoSection: {
+    },
+    userInfoSection: {
         paddingHorizontal: 30,
-        marginBottom: 25,
+        flex: 1,
+        justifyContent: 'center'
     },
     title: {
         fontSize: 24,
@@ -115,5 +113,9 @@ const styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 26,
     },
+    closeButton: {
+        fontSize: 20,
+        fontWeight: 'bold'
+    }
 })
 export default ChildrenInfoModal
