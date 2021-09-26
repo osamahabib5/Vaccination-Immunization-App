@@ -1,62 +1,52 @@
 import React from 'react'
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, Touchable } from 'react-native'
-import ChildrenInformation from '../Parent/ChildrenInformation/ChildrenInformation'
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
+import ChildDetails from '../Parent/ChildrenInformation/ChildDetails';
 
 function WorkerDashboard() {
   return (
     <ScrollView>
-      <View style={{ flex: 1 }}>
-        <View style={styles.container}>
-          <LinearGradient
-            colors={['#0df2c9', '#b1faed']} style={{ padding: 10 }} >
-            <View style={{ marginTop: 20,paddingTop: 10, marginBottom: 10 }}>
+      <LinearGradient style={styles.linearGradient}
+        colors={['#0df2c9', '#b1faed']} style={{ padding: 10 }} >
+        <View >
+          <TextInput
+            style={{ backgroundColor: '#eee',textAlign: 'center', fontWeight: 'bold', fontSize: 20, width: 200, borderRadius: 10, alignSelf: 'flex-end'}}
+            placeholder='Search Child ID'  placeholderTextColor="#00000087" />
+          <View >
+            <View style={{ marginTop: 20 }}>
               <Text style={{ fontSize: 20, alignSelf: 'center', marginBottom: 8 }}>Child Information</Text>
-              <View style={{ flexDirection: 'row', marginTop: 16, alignItems: 'center', paddingHorizontal: 12 }}>
-                <TextInput
-                  style={{ backgroundColor: '#eee', fontWeight: 'bold', fontSize: 16, width: 200, borderRadius: 10, paddingLeft: 15 }}
-                  placeholder='Children Name' placeholderTextColor="#00000087" />
-                <TouchableOpacity style={{backgroundColor:'white'}}>
-                  <Text style={{ fontSize: 16, fontWeight: 'bold', marginLeft: 10 }}>View Details</Text>
-                </TouchableOpacity>
-              </View>
+              {ChildDetails.map(data => {
+                return (
+                  <View key={data.id} style={{ flexDirection: 'row', marginTop: 16, alignItems: 'center', paddingHorizontal: 12 }}>
+                    <TextInput
+                      style={{ backgroundColor: '#eee', fontWeight: 'bold', fontSize: 16, width: 200, borderRadius: 10, paddingLeft: 15 }}
+                      placeholder='Children Name' value={data.name} placeholderTextColor="#00000087" />
+                    <TouchableOpacity style={{ backgroundColor: 'white' }}>
+                      <Text style={{ fontSize: 16, fontWeight: 'bold', marginLeft: 10 }}>View Details</Text>
+                    </TouchableOpacity>
+                  </View>
+                )
+              })}
             </View>
-          </LinearGradient>
-        </View>
-        <LinearGradient
-          colors={['#b1faed','#0df2c9' ]} style={{ marginTop: 50, paddingTop: 18 }}>
-          <View style={{ alignItems: 'center' }}>
+          </View>
+          <View style={{ alignItems: 'center', marginTop: 50, flex: 1, height: 480 }}>
             <Text style={{ fontSize: 20, alignSelf: 'center' }}>Polio Symptoms</Text>
             <View style={{ flexDirection: 'column', marginTop: 16, alignItems: 'center', paddingHorizontal: 12 }}>
               <TextInput
                 style={styles.searchFilterTextField}
-                placeholder='Add Your specifc  Symptom' placeholderTextColor="#00000087" />
-                
+                placeholder='Add Your Symptoms' placeholderTextColor="#00000087" />
               <TextInput
                 style={styles.searchFilterTextField}
-                placeholder='Add Your specifc  Symptom' placeholderTextColor="#00000087" />
-
-              <TextInput
-                style={styles.searchFilterTextField}
-                placeholder='Add Your specifc  Symptom' placeholderTextColor="#00000087" />
-
-              <TextInput
-                style={styles.searchFilterTextField}
-                placeholder='Add Your specifc  Symptom' placeholderTextColor="#00000087" />
-
-              <TextInput
-                style={styles.searchFilterTextField}
-                placeholder='Add Your specifc  Symptom' placeholderTextColor="#00000087" />
-
-              <TextInput
-                style={styles.searchFilterTextField}
-                placeholder='Add Your specifc  Symptom' placeholderTextColor="#00000087" />
+                placeholder='Add Your Symptoms' placeholderTextColor="#00000087" />
+              <View style={{ marginTop: 30 }}>
+                <TouchableOpacity>
+                  <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Submit</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
-        </LinearGradient>
-      </View>
+        </View>
+      </LinearGradient>
     </ScrollView >
   )
 }
@@ -79,6 +69,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingLeft: 15,
     marginBottom: 10
-  }
+  },
+  linearGradient: {
+    flex: 1,
+    width: '100%',
+    height: '100%'
+  },
 })
 export default WorkerDashboard;

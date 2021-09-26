@@ -38,7 +38,9 @@ export default function WorkerSignIn({ navigation, route }) {
             justifyContent: 'center', height: 115, width: 145, resizeMode: 'stretch', margin: 10
           }} source={require("../../assets/logo.png")} />
         </View>
-        <View style={{ flex: 1, flexDirection: 'column', position: "relative", marginBottom: "0%", justifyContent: 'center' }}>
+        <View style={{ flex: 1, 
+        marginTop: 90,
+          flexDirection: 'column', position: "relative", marginBottom: "0%", justifyContent: 'center' }}>
           <View style={styles.inputView}>
             <TextInput
               style={styles.TextInput}
