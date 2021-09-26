@@ -64,6 +64,7 @@ export default VaccinationDashboard
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        
     },
     userInfoSection: {
         paddingHorizontal: 10,
