@@ -9,7 +9,8 @@ function ParentDashboard() {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.container}>
-                <LinearGradient colors={['#e6f7fc', '#e6f7fc', '#0df2c9']}>
+                <LinearGradient style = {styles.linearGradient} 
+                colors={['#e6f7fc', '#e6f7fc', '#0df2c9']}>
                     <View style={{ marginTop: 18 }}>
                         <Text style={styles.textInput}>Children Information</Text>
                     </View>
@@ -39,6 +40,13 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 20,
         textAlign: 'center',
+    },
+    linearGradient: {
+        flex: 1,
+        paddingLeft: 15,
+        paddingRight: 15,
+        width: '100%',
+        height: 700,
     },
 })
 

@@ -9,6 +9,9 @@ function WorkerDashboard() {
       <LinearGradient style={styles.linearGradient}
         colors={['#0df2c9', '#b1faed']} style={{ padding: 10 }} >
         <View >
+          <TextInput
+            style={{ backgroundColor: '#eee',textAlign: 'center', fontWeight: 'bold', fontSize: 20, width: 200, borderRadius: 10, alignSelf: 'flex-end'}}
+            placeholder='Search Child ID'  placeholderTextColor="#00000087" />
           <View >
             <View style={{ marginTop: 20 }}>
               <Text style={{ fontSize: 20, alignSelf: 'center', marginBottom: 8 }}>Child Information</Text>
@@ -35,9 +38,9 @@ function WorkerDashboard() {
               <TextInput
                 style={styles.searchFilterTextField}
                 placeholder='Add Your Symptoms' placeholderTextColor="#00000087" />
-              <View style = {{marginTop: 30}}>
+              <View style={{ marginTop: 30 }}>
                 <TouchableOpacity>
-                  <Text style = {{fontSize: 20, fontWeight: 'bold'}}>Submit</Text>
+                  <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Submit</Text>
                 </TouchableOpacity>
               </View>
             </View>
