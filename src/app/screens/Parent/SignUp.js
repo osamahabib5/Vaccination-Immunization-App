@@ -43,7 +43,7 @@ export default function SignUp({ navigation, route }) {
     }
     return (
         <ScrollView style={styles.signup_screen}>
-            <LinearGradient style={{ alignItems: 'center', height: '100%', padding: 40 }} colors={['#e6f7fc', '#e6f7fc', '#0df2c9']}>
+            <View style={styles.formsFieldsSection}>
                 <View style={styles.inputView}>
                     <TextInput
                         style={styles.TextInput}
@@ -152,16 +152,21 @@ export default function SignUp({ navigation, route }) {
                         }}
                     />
                 </View>
+            </View>
+            <View style={styles.button_section}>
                 <TouchableOpacity
                     onPress={() => {
                         navigation.navigate('SignUp');
                         ParentSignup();
-                    }} style={{ backgroundColor: '#1796b3', width: 200, height: 50, justifyContent: 'center', borderRadius: 30, margin: 6 }}>
+                    }} style={{
+                        backgroundColor: '#0Cb8B6', width: 200, height: 50, justifyContent: 'center',
+                        alignItems: 'center', borderRadius: 20, margin: 6
+                    }}>
                     <Text style={{
                         color: '#FFFFFF', textAlign: 'center', fontSize: 18, fontWeight: "300"
                     }}>Submit</Text>
                 </TouchableOpacity>
-            </LinearGradient>
+            </View>
         </ScrollView>
     )
 }

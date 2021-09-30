@@ -9,6 +9,19 @@ export const styles = StyleSheet.create({
         flex: 1,
         width:'100%',      
     },
+    formsFieldsSection : {
+        width: '100%',
+        height: '90%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10
+    },
+    button_section: {
+        width: '100%',
+        height: '10%',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     linearGradient: {
         flex: 1,
         paddingLeft: 15,
@@ -83,20 +96,21 @@ export const styles = StyleSheet.create({
         fontWeight: "300",
     },
     inputView: {
-        backgroundColor: '#eee',
-        borderRadius: 30,
+        backgroundColor: '#f2f9fc',
+        borderRadius: 10,
         height: 45,
-        marginBottom: 30,
+        marginBottom: 20,
         alignItems: "center",
       },
       
       TextInput: {
+        top:1,
         height: 50,
         flex: 1,
-        color:'#00000087',
-        textAlign:"left",
+        color:'#001027',
+        // textAlign:"left",
         width: 300,
-        padding:15,
+        padding:10,
       }
 
 

@@ -96,7 +96,7 @@ export default function Login({ navigation, route }) {
           marginTop: 50
         }}>
           <TouchableOpacity
-            onPress={parentLogin} style={{ backgroundColor: '#1796b3', width: 200, height: 50, justifyContent: 'center', borderRadius: 30, margin: 6 }}>
+            onPress={parentLogin} style={{ backgroundColor: '#0Cb8B6', width: 200, height: 50, justifyContent: 'center', borderRadius: 30, margin: 6 }}>
             <Text style={{
               color: '#FFFFFF', textAlign: 'center', fontSize: 18, fontWeight: "300"
             }}>Login</Text>
@@ -104,7 +104,7 @@ export default function Login({ navigation, route }) {
           <TouchableOpacity
             onPress={() =>
               navigation.navigate('SignUp')
-            } style={{ backgroundColor: '#1796b3', width: 200, height: 50, justifyContent: 'center', borderRadius: 30, margin: 6 }}>
+            } style={{ backgroundColor: '#0Cb8B6', width: 200, height: 50, justifyContent: 'center', borderRadius: 30, margin: 6 }}>
             <Text style={{
               color: '#FFFFFF', textAlign: 'center', fontSize: 18, fontWeight: "300"
             }}>Sign Up</Text>
