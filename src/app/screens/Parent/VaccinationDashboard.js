@@ -8,20 +8,15 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // import Share from 'react-native-share';
 import { Animated, View, SafeAreaView, StyleSheet, TouchableOpacity, StatusBar, Modal } from 'react-native'
 import VaccinationDetails from './VaccinationDetails';
-import LinearGradient from 'react-native-linear-gradient';
 import VaccinationModal from './VaccinationModal';
 // import Animated, { color } from 'react-native-reanimated';
 
 function VaccinationDashboard() {
     const [visible, setVisible] = useState(false)
-    const ModalPopup = ({ visible, children }) => {
-        return(
-            <Modal transparent visible = {true}>
-                <VaccinationModal />
-            </Modal>
-        )
+    const [displayid, setid] = useState(0);
+    const hideModal = () => {
+        setVisible(false);
     }
-
     const scrollY = React.useRef(new Animated.Value(0)).current;
     const SPACING = 20;
     return (
@@ -60,19 +55,29 @@ function VaccinationDashboard() {
                             }}>{item.name}</Text>
                         </View>
                         <View style={{ flex: 0.5 }}>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => {
+                                setVisible(true)
+                                setid(index);
+                            }
+                            }>
                                 <Text style={{
                                     fontSize: 16, fontWeight: '700',
                                     textAlign: 'right'
-                                }}>Learn More</Text>
+                                }}>Available Vaccines</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
                 }}
             />
-            <ModalPopup visible = {visible}>
-
-            </ModalPopup>
+            <Modal animationType="slide"
+                visible={visible}
+                transparent={true}
+                onRequestClose={() => {
+                    Alert.alert("Modal has been closed.");
+                    setModalVisible(!modalVisible);
+                }}>
+                <VaccinationModal hideModal={hideModal} displayid = {displayid}/>
+            </Modal>
         </View>
     )
 }
