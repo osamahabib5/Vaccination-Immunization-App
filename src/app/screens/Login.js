@@ -14,40 +14,37 @@ export default function Login({ navigation, route }) {
   }
   const parentLogin = () => {
     if (email && password) {
-      if (validateEmail(email)) {
-        axios.post(baseUrl + "/users/login", {
-          username: email,
-          password: password,
-        }).then(function (response) {
-          Alert.alert("Sign In", "Login Successful!", [
-            {
-              text: "OK", onPress: () => {
-                setLoginDetails({
-                  ...parentLogin,
-                  email: null,
-                  password: null
-                });
-                navigation.navigate("ParentDrawer");
-              }
+      axios.post(baseUrl + "/users/login", {
+        username: email,
+        password: password,
+      }).then(function (response) {
+        Alert.alert("Sign In", "Login Successful!", [
+          {
+            text: "OK", onPress: () => {
+              setLoginDetails({
+                ...parentLogin,
+                email: null,
+                password: null
+              });
+              navigation.navigate("ParentDrawer");
             }
-          ]);
-        }).catch(function (error) {
-          // handle error
-          Alert.alert("Sign In", error);
-        }).then(
-          setLoginDetails({
-            ...parentLogin,
-            email: null,
-            password: null
-          })
-        )
-      }
-      else {
-        Alert.alert("SignIn", "Please enter a valid email address!")
-      }
-    } else {
-      Alert.alert("SignIn", "Please fill all the details!")
+          }
+        ]);
+      }).catch(function (error) {
+        // handle error
+        Alert.alert("Sign In", error);
+      }).then(
+        setLoginDetails({
+          ...parentLogin,
+          email: null,
+          password: null
+        })
+      )
     }
+    else {
+      Alert.alert("SignIn", "Please enter a valid email address!")
+    }
+
   }
   return (
     <View style={styles.container}>
