@@ -1,21 +1,31 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    signup_screen: {
-        flex:1,
-        flexDirection:"column",
-    },
+
     container: {
         flex: 1,
-        width:'100%',      
+        width: '100%',
+    },
+    formsFieldsSection: {
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 40
+    },
+    button_section: {
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 30,
+        marginBottom: 10,
     },
     linearGradient: {
         flex: 1,
         paddingLeft: 15,
         paddingRight: 15,
-        width:'100%',
+        width: '100%',
         justifyContent: 'center',
-        alignItems: 'center',      
+        alignItems: 'center',
     },
     top_container: {
         flex: 1,
@@ -24,11 +34,10 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
     },
     roundButton: {
-        // bottom:100,
         width: 250,
         height: 250,
         alignItems: 'center',
-        backgroundColor: '#1796b3',
+        backgroundColor: '#0Cb8B6',
         borderRadius: 200,
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.2,
@@ -38,7 +47,7 @@ export const styles = StyleSheet.create({
         color: '#FFFFFF',
         fontFamily: 'Audiowide-Regular',
         fontStyle: "normal",
-        fontSize: 20,
+        fontSize: 24,
         width: 160,
         lineHeight: 24,
         textAlign: "center",
@@ -46,22 +55,27 @@ export const styles = StyleSheet.create({
     },
     welcomeSubTitleSplashScreen: {
         top: 18,
-        width: 175,
+        width: 176,
         flex: 1,
         fontFamily: 'Roboto',
+        fontWeight: '900',
         flexDirection: "column",
         justifyContent: "space-evenly",
         alignItems: "center",
         textAlign: "center",
         lineHeight: 17,
-        fontSize: 16,
-        fontWeight: "100",
+        fontSize: 17,
         color: '#00000087',
 
     },
     second_container: {
         flex: 1,
         flexDirection: 'row',
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 60,
+        marginBottom: 10,
     },
     home_triangleButtongradient: {
         height: 90,
@@ -69,7 +83,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         borderTopLeftRadius: 30,
         borderBottomRightRadius: 25,
-        margin:5,
+        margin: 5,
     },
     home_touchabletriangle: {
         width: '100%',
@@ -80,24 +94,51 @@ export const styles = StyleSheet.create({
         color: '#00000087',
         textAlign: "center",
         fontSize: 15,
-        fontWeight: "300",
+        fontWeight: "800",
     },
     inputView: {
-        backgroundColor: '#eee',
-        borderRadius: 30,
-        height: 45,
-        marginBottom: 30,
+        backgroundColor: '#f2f9fc',
+        borderRadius: 10,
+        height: 48,
+        marginBottom: 15,
         alignItems: "center",
-      },
-      
-      TextInput: {
+    },
+    TextInput: {
+        top: 1,
         height: 50,
         flex: 1,
-        color:'#00000087',
-        textAlign:"left",
-        width: 300,
-        padding:15,
-      }
-
-
+        color: '#001027',
+        textAlign: "center",
+        width: 320,
+        padding: 10,
+        fontWeight: "bold"
+    },
+    buttonSubmit: {
+        backgroundColor: '#0Cb8B6',
+        width: 250,
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 20
+    },
+    buttonTextSubmit: {
+        color: '#FFFFFF',
+        textAlign: 'center',
+        fontSize: 18,
+        fontWeight: "400"
+    },
+    parentLoginLogoView: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop: '5%'
+    },
+    parentLogoImage: {
+        marginTop: 5,
+        justifyContent: 'center',
+        height: 130,
+        width: 150,
+        resizeMode: 'stretch',
+        margin: 10
+    }
 });
