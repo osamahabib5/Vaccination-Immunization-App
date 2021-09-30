@@ -1,34 +1,30 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    signup_screen: {
-        flex:1,
-        flexDirection:"column",
-    },
+
     container: {
         flex: 1,
-        width:'100%',      
-    },
-    formsFieldsSection : {
         width: '100%',
-        height: '90%',
+    },
+    formsFieldsSection: {
+        width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 10
+        marginTop: 40
     },
     button_section: {
         width: '100%',
-        height: '10%',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 30
     },
     linearGradient: {
         flex: 1,
         paddingLeft: 15,
         paddingRight: 15,
-        width:'100%',
+        width: '100%',
         justifyContent: 'center',
-        alignItems: 'center',      
+        alignItems: 'center',
     },
     top_container: {
         flex: 1,
@@ -82,7 +78,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         borderTopLeftRadius: 30,
         borderBottomRightRadius: 25,
-        margin:5,
+        margin: 5,
     },
     home_touchabletriangle: {
         width: '100%',
@@ -98,20 +94,36 @@ export const styles = StyleSheet.create({
     inputView: {
         backgroundColor: '#f2f9fc',
         borderRadius: 10,
-        height: 45,
-        marginBottom: 20,
+        height: 48,
+        marginBottom: 15,
         alignItems: "center",
-      },
-      
-      TextInput: {
-        top:1,
+    },
+
+    TextInput: {
+        top: 1,
         height: 50,
         flex: 1,
-        color:'#001027',
-        // textAlign:"left",
-        width: 300,
-        padding:10,
-      }
+        color: '#001027',
+        textAlign: "center",
+        width: 320,
+        padding: 10,
+        fontWeight: "bold"
+    },
+    buttonSubmitSignUp: {
+        backgroundColor: '#0Cb8B6',
+        width: 200,
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 20
+    },
+    buttonTextSubmitSignUp: {
+        color: '#FFFFFF',
+        textAlign: 'center',
+        fontSize: 18,
+        fontWeight: "400"
+    }
+    
 
 
 });

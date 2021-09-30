@@ -42,7 +42,8 @@ export default function SignUp({ navigation, route }) {
         }
     }
     return (
-        <ScrollView style={styles.signup_screen}>
+        <ScrollView>
+        <View style={styles.container}>
             <View style={styles.formsFieldsSection}>
                 <View style={styles.inputView}>
                     <TextInput
@@ -158,15 +159,11 @@ export default function SignUp({ navigation, route }) {
                     onPress={() => {
                         navigation.navigate('SignUp');
                         ParentSignup();
-                    }} style={{
-                        backgroundColor: '#0Cb8B6', width: 200, height: 50, justifyContent: 'center',
-                        alignItems: 'center', borderRadius: 20, margin: 6
-                    }}>
-                    <Text style={{
-                        color: '#FFFFFF', textAlign: 'center', fontSize: 18, fontWeight: "300"
-                    }}>Submit</Text>
+                    }} style={styles.buttonSubmitSignUp}>
+                    <Text style={styles.buttonTextSubmitSignUp}>Submit</Text>
                 </TouchableOpacity>
             </View>
+        </View>
         </ScrollView>
     )
 }

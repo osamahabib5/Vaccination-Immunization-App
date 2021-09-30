@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TextInput, View, Button, TouchableOpacity, Image, Alert } from 'react-native';
+import { Text, TextInput, View, Button, TouchableOpacity, Image,ScrollView, Alert } from 'react-native';
 import { styles } from '../styles/style';
 import LinearGradient from 'react-native-linear-gradient';
 import axios from 'axios';
@@ -50,9 +50,9 @@ export default function Login({ navigation, route }) {
     }
   }
   return (
-    <View style={styles.container}>
-      <LinearGradient style={styles.linearGradient} colors={['#e6f7fc', '#e6f7fc', '#0df2c9']}>
-        <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
           <Image style={{
             marginTop: 5,
             justifyContent: 'center', height: 120, width: 145, resizeMode: 'stretch', margin: 10
@@ -60,7 +60,7 @@ export default function Login({ navigation, route }) {
         </View>
         <View style={{
           flex: 1, flexDirection: 'column', position: "relative", justifyContent: 'center',
-          marginTop: 80
+          marginTop: 20
         }}>
           <View style={styles.inputView}>
             <TextInput
@@ -110,9 +110,8 @@ export default function Login({ navigation, route }) {
             }}>Sign Up</Text>
           </TouchableOpacity>
         </View>
-
-      </LinearGradient>
-    </View>
+      </View>
+    </ScrollView>
 
   )
 }
