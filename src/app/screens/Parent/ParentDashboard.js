@@ -17,12 +17,12 @@ function ParentDashboard() {
                     <View style={{ alignSelf: 'center' }}>
                         <ChildrenInformation buttondescription="View Details" />
                     </View>
-                    {/* <View style={{ marginTop: 25 }}>
+                    <View style={{ marginTop: 25 }}>
                         <Text style={styles.textInput}>Children Diet Plan</Text>
                         <View style={{ alignSelf: 'center' }}>
                             <ChildrenInformation buttondescription="View Diet Plan" />
                         </View>
-                    </View> */}
+                    </View>
                 </LinearGradient >
             </View>
         </ScrollView>

@@ -1,6 +1,6 @@
 const ChildDetails = [{
     id: 0,
-    name: "Ali Tariq",
+    name: "CH-1234",
     parentName: "Osama Bin Habib",
     parentCNIC: "4220104689545",
     contactNo: "0312-2410541",
@@ -11,7 +11,7 @@ const ChildDetails = [{
 },
 {
     id: 1,
-    name: "Noman Ali",
+    name: "CH-1235",
     parentName: "Osama Bin Habib",
     parentCNIC: "4220104689545",
     contactNo: "0313-2311241",

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Title,
     Caption,
@@ -6,55 +6,74 @@ import {
 } from "react-native-paper";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // import Share from 'react-native-share';
-import { View, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native'
+import { Animated, View, SafeAreaView, StyleSheet, TouchableOpacity, StatusBar, Modal } from 'react-native'
 import VaccinationDetails from './VaccinationDetails';
 import LinearGradient from 'react-native-linear-gradient';
+import VaccinationModal from './VaccinationModal';
+// import Animated, { color } from 'react-native-reanimated';
 
 function VaccinationDashboard() {
+    const [visible, setVisible] = useState(false)
+    const ModalPopup = ({ visible, children }) => {
+        return(
+            <Modal transparent visible = {true}>
+                <VaccinationModal />
+            </Modal>
+        )
+    }
+
+    const scrollY = React.useRef(new Animated.Value(0)).current;
+    const SPACING = 20;
     return (
-        <SafeAreaView style={styles.container}>
-            <LinearGradient style={styles.linearGradient}
-                colors={['#e6f7fc', '#e6f7fc', '#0df2c9']}>
-                <View>
-                    <View style={{
-                        flexDirection: 'row'
-                    }}>
-                        <View style={{
-                            flex: 1,
-                            alignItems: 'center',
-                            top: 40
-                        }}>
-                            <Title style={styles.title}>Vaccination Details
-                            </Title>
+        <View style={{ flex: 1, backgroundColor: "#fff" }}>
+            <Animated.FlatList
+                data={VaccinationDetails}
+                onScroll={Animated.event(
+                    [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+                    { useNativeDriver: true }
+                )}
+                keyExtractor={item => item.id}
+                contentContainerStyle={{
+                    padding: SPACING,
+                    paddingTop: StatusBar.currentHeight || 42
+                }}
+                renderItem={({ item, index }) => {
+                    return <View
+                        style={{
+                            padding: SPACING,
+                            flexDirection: 'row',
+                            marginBottom: SPACING,
+                            backgroundColor: '#0Cb8B6',
+                            borderRadius: 16,
+                            shadowColor: "#000",
+                            shadowOffset: {
+                                width: 0,
+                                height: 10
+                            },
+                            shadowOpacity: .3,
+                            shadowRadius: 20
+                        }}
+                    >
+                        <View style={{ flex: 0.5 }}>
+                            <Text style={{
+                                fontSize: 20, fontWeight: '700'
+                            }}>{item.name}</Text>
+                        </View>
+                        <View style={{ flex: 0.5 }}>
+                            <TouchableOpacity>
+                                <Text style={{
+                                    fontSize: 16, fontWeight: '700',
+                                    textAlign: 'right'
+                                }}>Learn More</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
-                </View>
-                {VaccinationDetails.map(data => {
-                    return (
-                        <View key={data.id} style={styles.userInfoSection}>
-                            <View style={styles.row}>
-                                <Text>
-                                    <Text style={[styles.infoStyling, { fontWeight: "bold" }]}> Name: </Text>
-                                    <Text style={styles.infoStyling}> {data.name}</Text>
-                                </Text>
-                            </View>
-                            <View style={styles.row}>
-                                <Text style={[styles.infoStyling, { fontWeight: "bold" }]}> Manufacturer: </Text>
-                                <Text style={styles.infoStyling}> {data.manufacturer}</Text>
-                            </View>
-                            <View style={styles.row}>
-                                <Text style={[styles.infoStyling, { fontWeight: "bold" }]}> Quantity:  </Text>
-                                <Text style={styles.infoStyling}> {data.quantity}</Text>
-                            </View>
-                            <View style={styles.row}>
-                                <Text style={[styles.infoStyling, { fontWeight: "bold" }]}> Country: </Text>
-                                <Text style={styles.infoStyling}> {data.country}</Text>
-                            </View>
-                        </View>
-                    )
-                })}
-            </LinearGradient>
-        </SafeAreaView>
+                }}
+            />
+            <ModalPopup visible = {visible}>
+
+            </ModalPopup>
+        </View>
     )
 }
 
@@ -64,7 +83,7 @@ export default VaccinationDashboard
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        
+
     },
     userInfoSection: {
         paddingHorizontal: 10,
