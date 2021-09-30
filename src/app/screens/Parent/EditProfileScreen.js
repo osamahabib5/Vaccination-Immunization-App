@@ -12,100 +12,98 @@ import { TextInput } from 'react-native';
 
 function EditProfileScreen() {
     return (
-        <ScrollView style = {{
+        <ScrollView style={{
             backgroundColor: "#e6f7fc"
         }}>
-            <LinearGradient style = {{
-                marginTop: 40
-            }} colors={['#e6f7fc', '#e6f7fc', '#0df2c9']}>
-                <View style={styles.container}>
-                    <View style={{ margin: 20 }}>
-                        <View style={{ alignItems: 'center' }}>
-                            <TouchableOpacity onPress={() => { }} >
-                                <View style={{
-                                    height: 100,
-                                    width: 100,
-                                    borderRadius: 15,
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                }}>
-                                    <ImageBackground
-                                        source={require('../../assets/Avatar.jpg')}
-                                        style={{ height: 100, width: 100 }}
-                                        imageStyle={{ borderRadius: 15 }}
-                                    >
-                                    </ImageBackground>
-                                </View>
-                            </TouchableOpacity>
-                            <Text style = {{marginTop: 10, fontSize: 25,
-                            fontWeight: 'bold'}}>
-                                John Doe
-                            </Text>
-                        </View>
-                        <View style={styles.action}>
-                            <FontAwesome name="user-o" size={20} style={{
-                                marginTop: 2
-                            }} />
-                            <TextInput
-                                placeholder="Name"
-                                placeholderTextColor="#666666"
-                                autoCorrect={false}
-                                style={styles.textInput}
-                            />
-                        </View>
-                        <View style={styles.action}>
-                            <FontAwesome name="at" size={20} style={{
-                                marginTop: 2
-                            }} />
-                            <TextInput
-                                placeholder="Email"
-                                placeholderTextColor="#666666"
-                                autoCorrect={false}
-                                keyboardType='email-address'
-                                style={styles.textInput}
-                            />
-                        </View>
-                        <View style={styles.action}>
-                        <FontAwesome name="user-secret" size={20} style={{
-                                marginTop: 2
-                            }} />
-                            <TextInput
-                                placeholder="Password"
-                                placeholderTextColor="#666666"
-                                autoCorrect={false}
-                                style={styles.textInput}
-                                secureTextEntry={true}
-                            />
-                        </View>
-                        <View style={styles.action}>
-                            <FontAwesome name="id-card" size={20} style={{
-                                marginTop: 2
-                            }} />
-                            <TextInput
-                                placeholder="CNIC"
-                                placeholderTextColor="#666666"
-                                keyboardType='number-pad'
-                                autoCorrect={false}
-                                style={styles.textInput}
-                            />
-                        </View>
-                        <View style={styles.action}>
-                            <FontAwesome name="address-book" size={20} style={{
-                                marginTop: 2
-                            }} />
-                            <TextInput
-                                placeholder="Address"
-                                placeholderTextColor="#666666"
-                                autoCorrect={false}
-                                style={styles.textInput}
-                            />
-                        </View>
-                        <TouchableOpacity style={styles.commandButton}>
-                            <Text style={styles.panelButtonTitle}>Submit</Text>
+            <View style={styles.container}>
+                <View style={{ margin: 20 }}>
+                    <View style={{ alignItems: 'center' }}>
+                        <TouchableOpacity onPress={() => { }} >
+                            <View style={{
+                                height: 100,
+                                width: 100,
+                                borderRadius: 15,
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}>
+                                <ImageBackground
+                                    source={require('../../assets/Avatar.jpg')}
+                                    style={{ height: 100, width: 100 }}
+                                    imageStyle={{ borderRadius: 15 }}
+                                >
+                                </ImageBackground>
+                            </View>
                         </TouchableOpacity>
+                        <Text style={{
+                            marginTop: 10, fontSize: 25,
+                            fontWeight: 'bold'
+                        }}>
+                            Usama
+                        </Text>
                     </View>
+                    <View style={styles.action}>
+                        <FontAwesome name="user-o" size={20} style={{
+                            marginTop: 2
+                        }} />
+                        <TextInput
+                            placeholder="Name"
+                            placeholderTextColor="#666666"
+                            autoCorrect={false}
+                            style={styles.textInput}
+                        />
+                    </View>
+                    <View style={styles.action}>
+                        <FontAwesome name="at" size={20} style={{
+                            marginTop: 2
+                        }} />
+                        <TextInput
+                            placeholder="Email"
+                            placeholderTextColor="#666666"
+                            autoCorrect={false}
+                            keyboardType='email-address'
+                            style={styles.textInput}
+                        />
+                    </View>
+                    <View style={styles.action}>
+                        <FontAwesome name="user-secret" size={20} style={{
+                            marginTop: 2
+                        }} />
+                        <TextInput
+                            placeholder="Password"
+                            placeholderTextColor="#666666"
+                            autoCorrect={false}
+                            style={styles.textInput}
+                            secureTextEntry={true}
+                        />
+                    </View>
+                    <View style={styles.action}>
+                        <FontAwesome name="id-card" size={20} style={{
+                            marginTop: 2
+                        }} />
+                        <TextInput
+                            placeholder="CNIC"
+                            placeholderTextColor="#666666"
+                            keyboardType='number-pad'
+                            autoCorrect={false}
+                            style={styles.textInput}
+                        />
+                    </View>
+                    <View style={styles.action}>
+                        <FontAwesome name="address-book" size={20} style={{
+                            marginTop: 2
+                        }} />
+                        <TextInput
+                            placeholder="Address"
+                            placeholderTextColor="#666666"
+                            autoCorrect={false}
+                            style={styles.textInput}
+                        />
+                    </View>
+                    <TouchableOpacity style={styles.commandButton}>
+                        <Text style={styles.panelButtonTitle}>Submit</Text>
+                    </TouchableOpacity>
                 </View>
-            </LinearGradient>
+            </View>
         </ScrollView>
     )
 }

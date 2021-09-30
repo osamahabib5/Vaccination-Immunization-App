@@ -9,21 +9,19 @@ function ParentDashboard() {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.container}>
-                <LinearGradient style = {styles.linearGradient} 
-                colors={['#e6f7fc', '#e6f7fc', '#0df2c9']}>
-                    <View style={{ marginTop: 18 }}>
-                        <Text style={styles.textInput}>Children Information</Text>
-                    </View>
+
+                <View style={{ marginTop: 18 }}>
+                    <Text style={styles.textInput}>Children Information</Text>
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                    <ChildrenInformation buttondescription="View Details" />
+                </View>
+                <View style={{ marginTop: 25 }}>
+                    <Text style={styles.textInput}>Children Diet Plan</Text>
                     <View style={{ alignSelf: 'center' }}>
-                        <ChildrenInformation buttondescription="View Details" />
+                        <ChildrenInformation buttondescription="View Diet Plan" />
                     </View>
-                    <View style={{ marginTop: 25 }}>
-                        <Text style={styles.textInput}>Children Diet Plan</Text>
-                        <View style={{ alignSelf: 'center' }}>
-                            <ChildrenInformation buttondescription="View Diet Plan" />
-                        </View>
-                    </View>
-                </LinearGradient >
+                </View>
             </View>
         </ScrollView>
 

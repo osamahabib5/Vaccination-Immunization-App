@@ -35,7 +35,9 @@ function ChildrenInformation(props, { navigation }) {
                                 }} style={styles.ViewDetailsButton}
                             >
                                 <Text style={{
-                                    color: '#FFFFFF', textAlign: 'center', fontSize: 13, fontWeight: "500"
+                                    color: '#f2f9fc',
+                                    
+                                    textAlign: 'center', fontSize: 15, fontWeight: "500"
                                 }}>{props.buttondescription}</Text>
                             </TouchableOpacity>
                         </View>
@@ -55,7 +57,9 @@ function ChildrenInformation(props, { navigation }) {
                     <ChildrenInfoModal closeModal={closeModal} 
                     childid = {childid}
                     /> :
-                    <DietPlanModal closeModal={closeModal} />
+                    <ChildrenInfoModal closeModal={closeModal} 
+                    childid = {childid}
+                    />
                 }
             </Modal>
         </View>
@@ -72,8 +76,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     ViewDetailsButton: {
-        backgroundColor: '#1796b3',
-        width: 65, height: 65,
+        backgroundColor: '#0Cb8B6',
+        width: 80, height: 80,
         justifyContent: 'center',
         borderRadius: 40,
         marginLeft: 20
