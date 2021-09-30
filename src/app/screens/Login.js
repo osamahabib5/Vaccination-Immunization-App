@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TextInput, View, Button, TouchableOpacity, Image,ScrollView, Alert } from 'react-native';
+import { Text, TextInput, View, Button, TouchableOpacity, Image, ScrollView, Alert } from 'react-native';
 import { styles } from '../styles/style';
 import LinearGradient from 'react-native-linear-gradient';
 import axios from 'axios';
@@ -52,16 +52,10 @@ export default function Login({ navigation, route }) {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
-          <Image style={{
-            marginTop: 5,
-            justifyContent: 'center', height: 120, width: 145, resizeMode: 'stretch', margin: 10
-          }} source={require("../assets/logo.png")} />
+        <View style={styles.parentLoginLogoView}>
+          <Image style={styles.parentLogoImage} source={require("../assets/logo.png")} />
         </View>
-        <View style={{
-          flex: 1, flexDirection: 'column', position: "relative", justifyContent: 'center',
-          marginTop: 20
-        }}>
+        <View style={styles.formsFieldsSection}>
           <View style={styles.inputView}>
             <TextInput
               style={styles.TextInput}
@@ -91,24 +85,20 @@ export default function Login({ navigation, route }) {
             />
           </View>
         </View>
-        <View style={{
-          flex: 1, flexDirection: 'column', position: "relative", marginBottom: "0%", justifyContent: 'center',
-          marginTop: 50
-        }}>
-          <TouchableOpacity
-            onPress={parentLogin} style={{ backgroundColor: '#0Cb8B6', width: 200, height: 50, justifyContent: 'center', borderRadius: 30, margin: 6 }}>
-            <Text style={{
-              color: '#FFFFFF', textAlign: 'center', fontSize: 18, fontWeight: "300"
-            }}>Login</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate('SignUp')
-            } style={{ backgroundColor: '#0Cb8B6', width: 200, height: 50, justifyContent: 'center', borderRadius: 30, margin: 6 }}>
-            <Text style={{
-              color: '#FFFFFF', textAlign: 'center', fontSize: 18, fontWeight: "300"
-            }}>Sign Up</Text>
-          </TouchableOpacity>
+        <View style={styles.button_section}>
+          <View style={{ marginBottom: 13 }}>
+            <TouchableOpacity
+              onPress={parentLogin} style={styles.buttonSubmit}>
+              <Text style={styles.buttonTextSubmit}>Login</Text>
+            </TouchableOpacity>
+          </View>
+          <View>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate('SignUp')} style={styles.buttonSubmit}>
+              <Text style={styles.buttonTextSubmit}>Sign Up</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </ScrollView>
