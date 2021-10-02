@@ -6,7 +6,6 @@ import {
     ImageBackground,
     StyleSheet
 } from 'react-native'
-import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { TextInput } from 'react-native';
 
@@ -111,6 +110,7 @@ function EditProfileScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: "white"
     },
     commandButton: {
         padding: 15,
