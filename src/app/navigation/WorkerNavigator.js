@@ -3,6 +3,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import WorkerDashboard from '../screens/Worker/WorkerDashboard';
 import Splash from '../screens/Splash';
 import CheckPolioSymptoms from '../screens/Worker/CheckPolioSymptoms';
+import CheckChildGrowth from '../screens/Parent/CheckChildGrowth';
 const Drawer = createDrawerNavigator();
 function WorkerNavigator() {
     return (
