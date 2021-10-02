@@ -8,6 +8,7 @@ import WorkerSignIn from './src/app/screens/Worker/WorkerSignIn';
 import DrawerNavigator from './src/app/navigation/DrawerNavigator';
 import WorkerDashboard from './src/app/screens/Worker/WorkerDashboard';
 import WorkerNavigator from './src/app/navigation/WorkerNavigator';
+import { NativeBaseProvider, Box } from 'native-base';
 const Stack = createNativeStackNavigator();
 export default function App() {
   const MyTheme = {
@@ -18,9 +19,10 @@ export default function App() {
     },
   };
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Splash" component={Splash} options={{
+    <NativeBaseProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          {/* <Stack.Screen name="Splash" component={Splash} options={{
           title: 'Child Immunization.', headerStyle: {
             backgroundColor: '#001027',
           },
@@ -69,19 +71,20 @@ export default function App() {
           headerTitleStyle: {
             fontWeight: 'bold',
           }
-        }} />
-        <Stack.Screen name="WorkerDrawer" component={WorkerNavigator} options={{
-          headerShown: false,
-          title: 'Worker Dashboard.',
-          headerStyle: {
-            backgroundColor: '#001027',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          }
-        }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+        }} /> */}
+          <Stack.Screen name="WorkerDrawer" component={WorkerNavigator} options={{
+            headerShown: false,
+            title: 'Worker Dashboard.',
+            headerStyle: {
+              backgroundColor: '#001027',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            }
+          }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </NativeBaseProvider>
   );
 }
