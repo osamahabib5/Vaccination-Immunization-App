@@ -9,7 +9,7 @@ const Drawer = createDrawerNavigator();
 function DrawerNavigator() {
     return (
         <Drawer.Navigator>
-            <Drawer.Screen name="Home" component={ParentDashboard} />
+            <Drawer.Screen name="Children Information" component={ParentDashboard} />
             <Drawer.Screen name="My Profile" component={EditProfileScreen} />
             <Drawer.Screen name="Vaccination Details" component={VaccinationDashboard} />
             <Drawer.Screen name="Child Growth" component={CheckChildGrowth} />

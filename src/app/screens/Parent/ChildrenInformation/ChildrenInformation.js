@@ -1,9 +1,47 @@
 import React, { useState } from 'react'
-import { View, Text, Modal, TouchableOpacity, StyleSheet, Alert } from 'react-native'
+import { View, Text, Modal, TouchableOpacity, StyleSheet, Image, Alert } from 'react-native'
+import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import { ListItem, Icon } from 'react-native-elements'
 import ChildDetails from './ChildDetails';
 import ChildrenInfoModal from './ChildrenInfoModal';
 import DietPlanModal from './DietPlanModal';
+const users = [
+    {
+        id: 0,
+        name: 'Ali',
+        avatar: 'https://reactnative.dev/img/tiny_logo.png',
+        color: 'white',
 
+    },
+    {
+        id: 1,
+        name: 'Kamran',
+        avatar: 'https://reactnative.dev/img/tiny_logo.png',
+        color: 'white',
+
+    },
+    {
+        id: 2,
+        name: 'Saleem',
+        avatar: 'https://reactnative.dev/img/tiny_logo.png',
+        color: 'white',
+
+    },
+    {
+        id: 3,
+        name: 'Ahmed',
+        avatar: 'https://reactnative.dev/img/tiny_logo.png',
+        color: 'white',
+
+    },
+    {
+        id: 4,
+        name: 'Junaid',
+        avatar: 'https://reactnative.dev/img/tiny_logo.png',
+        color: 'white',
+
+    }
+]
 
 function ChildrenInformation(props, { navigation }) {
     const [modalVisible, setModalVisible] = useState(false);
@@ -11,58 +49,36 @@ function ChildrenInformation(props, { navigation }) {
     const closeModal = () => {
         setModalVisible(false);
     }
+    const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
     return (
-
-        <View style={{ flexDirection: 'column', marginTop: 20, alignSelf: 'center' }}>
-            {ChildDetails.map(data => {
-                return (
-                    <View key={data.id} style={{
-                        flexDirection: 'row', marginTop: 20
-                    }}>
-                        <View>
-                            <Text style={styles.ChildName}>
-                                {data.name}
-                            </Text>
-                        </View>
-                        <View>
-                            <TouchableOpacity
-                                onPress={() => {
-                                    // navigation.navigate('SignUp');
-                                    // ParentSignup();
-                                    setModalVisible(true);
-                                    setchildid(data.id);
-
-                                }} style={styles.ViewDetailsButton}
-                            >
-                                <Text style={{
-                                    color: '#f2f9fc',
-                                    
-                                    textAlign: 'center', fontSize: 15, fontWeight: "500"
-                                }}>{props.buttondescription}</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                )
-            })}
-            <Modal
-                animationType="slide"
-                visible={modalVisible}
-                transparent={true}
-                onRequestClose={() => {
-                    Alert.alert("Modal has been closed.");
-                    setModalVisible(!modalVisible);
-                }}
-            >
-                {props.buttondescription === "View Details" ?
-                    <ChildrenInfoModal closeModal={closeModal} 
-                    childid = {childid}
-                    /> :
-                    <ChildrenInfoModal closeModal={closeModal} 
-                    childid = {childid}
-                    />
-                }
-            </Modal>
-        </View>
+        users.map((u, i) => {
+            return (
+                <Card>
+                    <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
+                    <Card.Content>
+                        <Title>Card title</Title>
+                        <Paragraph>Card content</Paragraph>
+                    </Card.Content>
+                    <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+                    <Card.Actions>
+                        <Button>Cancel</Button>
+                        <Button>Ok</Button>
+                    </Card.Actions>
+                </Card>
+                // <Card key={u.id} style={{ backgroundColor:'blue'}}>
+                //     {/* <Card.Title>{u.name}</Card.Title> */}
+                //     {/* <Card.Divider /> */}
+                //     <View key={i} style={styles.Card}>
+                //         <Image
+                //             style={styles.image}
+                //             resizeMode="cover"
+                //             source={{ uri: u.avatar }}
+                //         />
+                //         <Text>{u.name}</Text>
+                //     </View>
+                // </Card>
+            );
+        })
     )
 }
 
@@ -72,19 +88,24 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 20,
         width: 100,
-        fontSize: 15,
+        fontSize: 1,
         fontWeight: 'bold'
     },
     ViewDetailsButton: {
         backgroundColor: '#0Cb8B6',
-        width: 80, height: 80,
+        width: 80,
+        height: 80,
         justifyContent: 'center',
         borderRadius: 40,
         marginLeft: 20
     },
-    growthHeading: {
-
+    tinyImage: {
+        width: 100
+    },
+    Card: {
+        borderRadius: 20,
     }
+
 })
 
 export default ChildrenInformation
