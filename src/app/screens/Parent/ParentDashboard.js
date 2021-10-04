@@ -9,23 +9,14 @@ function ParentDashboard() {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.container}>
-
                 <View style={{ marginTop: 18 }}>
-                    <Text style={styles.textInput}>Children Information</Text>
+                    <Text style={styles.textInput}></Text>
                 </View>
-                <View style={{ alignSelf: 'center' }}>
+                <View style={{ alignSelf: 'center',width:350 }}>
                     <ChildrenInformation buttondescription="View Details" />
-                </View>
-                <View style={{ marginTop: 25 }}>
-                    <Text style={styles.textInput}>Children Diet Plan</Text>
-                    <View style={{ alignSelf: 'center' }}>
-                        <ChildrenInformation buttondescription="View Diet Plan" />
-                    </View>
                 </View>
             </View>
         </ScrollView>
-
-
     )
 }
 
