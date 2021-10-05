@@ -22,7 +22,7 @@ export default function App() {
     <NativeBaseProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          {/* <Stack.Screen name="Splash" component={Splash} options={{
+          <Stack.Screen name="Splash" component={Splash} options={{
             title: 'Child Immunization.', headerStyle: {
               backgroundColor: '#001027',
             },
@@ -60,8 +60,12 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
             }
+<<<<<<< HEAD
           }} />*/}
 
+=======
+          }} />
+>>>>>>> f2f229ec8038e2b1dd0593f334555f505ea7ad83
           <Stack.Screen name="ParentDrawer" component={DrawerNavigator} options={{
             headerShown: false,
             title: 'Parent Dashboard.',
@@ -74,7 +78,11 @@ export default function App() {
             }
           }} />
 
+<<<<<<< HEAD
           {/* <Stack.Screen name="WorkerDrawer" component={WorkerNavigator} options={{
+=======
+          <Stack.Screen name="WorkerDrawer" component={WorkerNavigator} options={{
+>>>>>>> f2f229ec8038e2b1dd0593f334555f505ea7ad83
             headerShown: false,
             title: 'Worker Dashboard.',
             headerStyle: {
@@ -84,7 +92,7 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
             }
-          }} /> */}
+          }} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
