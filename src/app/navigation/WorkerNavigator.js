@@ -8,8 +8,28 @@ const Drawer = createDrawerNavigator();
 function WorkerNavigator() {
     return (
         <Drawer.Navigator>
-            <Drawer.Screen name="Home" component={WorkerDashboard} />
-            <Drawer.Screen name="Polio Symptoms" component={CheckPolioSymptoms} />
+            <Drawer.Screen name="Home" component={WorkerDashboard} options={{
+                headerShown: false,
+                title: 'Home',
+                headerStyle: {
+                    backgroundColor: '#001027',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                }
+            }} />
+            <Drawer.Screen name="Polio Symptoms" component={CheckPolioSymptoms} options={{
+                headerShown: false,
+                title: 'Polio Symptoms',
+                headerStyle: {
+                    backgroundColor: '#001027',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                }
+            }} />
             <Drawer.Screen name="Logout" component={Splash} />
         </Drawer.Navigator>
     )
