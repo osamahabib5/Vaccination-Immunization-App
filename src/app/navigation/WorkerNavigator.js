@@ -7,8 +7,20 @@ import CheckChildGrowth from '../screens/Parent/CheckChildGrowth';
 const Drawer = createDrawerNavigator();
 function WorkerNavigator() {
     return (
-        <Drawer.Navigator>
-            <Drawer.Screen name="Home" component={WorkerDashboard} />
+        <Drawer.Navigator screenOptions={{
+            headerStyle: {
+                backgroundColor: '#001027',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            },
+            sceneContainerStyle: {
+                backgroundColor: 'white'
+            }
+        }}
+        >
+            <Drawer.Screen name="Home" component={WorkerDashboard}/>
             <Drawer.Screen name="Polio Symptoms" component={CheckPolioSymptoms} />
             <Drawer.Screen name="Logout" component={Splash} />
         </Drawer.Navigator>

@@ -61,7 +61,7 @@ export default function App() {
               fontWeight: 'bold',
             }
           }} />
-          */} 
+          
           <Stack.Screen name="ParentDrawer" component={DrawerNavigator} options={{
             headerShown: false,
             title: 'Parent Dashboard.',
@@ -72,8 +72,8 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
             }
-          }} />
-          {/* 
+          }} />*/}
+
           <Stack.Screen name="WorkerDrawer" component={WorkerNavigator} options={{
             headerShown: false,
             title: 'Worker Dashboard.',
@@ -84,7 +84,7 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
             }
-          }} /> */}
+          }} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
