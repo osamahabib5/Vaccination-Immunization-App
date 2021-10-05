@@ -6,12 +6,6 @@ import ChildrenInfoModal from '../Parent/ChildrenInformation/ChildrenInfoModal';
 import { Avatar, Button, Card, Title, Text } from 'react-native-paper';
 import { fontWeight, style } from 'styled-system';
 function WorkerDashboard() {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [childid, setchildid] = useState(0);
-  const closeModal = () => {
-    setModalVisible(false);
-  }
-
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -35,7 +29,7 @@ function WorkerDashboard() {
                       <View style={{
                         flexDirection: 'row',
                       }}>
-                        <View style = {{}}>
+                        <View style={{}}>
                           <Avatar.Image size={40} source={require('../../assets/children.png')} />
                         </View>
                         <View style={{
