@@ -8,9 +8,9 @@ const Drawer = createDrawerNavigator();
 function WorkerNavigator() {
     return (
         <Drawer.Navigator>
-            <Drawer.Screen name="Home" component={WorkerDashboard} options={{
+            <Drawer.Screen name="Children Information" component={WorkerDashboard} options={{
                 // headerShown: false,
-                title: 'Home',
+                title: 'Children Information',
                 headerStyle: {
                     backgroundColor: '#001027',
                 },

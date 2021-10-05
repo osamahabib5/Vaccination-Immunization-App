@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, Modal, TouchableOpacity, StyleSheet, Image, Alert } from 'react-native'
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-import { ListItem, Icon } from 'react-native-elements'
+// import { ListItem, Icon } from 'react-native-elements'
 import ChildDetails from './ChildDetails';
 import ChildrenInfoModal from './ChildrenInfoModal';
 
@@ -42,7 +42,12 @@ function ChildrenInformation(props, { navigation }) {
                             // subtitleStyle={{ marginBottom: 2 }}
                             subtitle={child_details(u.parentName,
                                 u.dateOfBirth)}
-                            left={LeftContent} />
+                                subtitleStyle = {{
+                                    position: 'relative',
+                                    top: 4
+                                }}
+                                left = {LeftContent}
+                        />
                     </Card>
 
                 );
