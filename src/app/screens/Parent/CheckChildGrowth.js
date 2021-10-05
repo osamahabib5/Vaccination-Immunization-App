@@ -13,6 +13,7 @@ function CheckChildGrowth() {
         <ScrollView>
             <Flex
                 direction="column"
+                backgroundColor = "white"
             >
                 <Center style={{
                     marginTop: 30

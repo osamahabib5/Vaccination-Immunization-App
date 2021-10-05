@@ -22,7 +22,7 @@ export default function App() {
     },
   };
   return (
-    <PaperProvider theme = {theme}>
+    <PaperProvider theme={theme}>
       <NativeBaseProvider>
         <NavigationContainer>
           <Stack.Navigator>
@@ -78,16 +78,16 @@ export default function App() {
             }} />
 
             {/* <Stack.Screen name="WorkerDrawer" component={WorkerNavigator} options={{
-            headerShown: false,
-            title: 'Worker Dashboard.',
-            headerStyle: {
-              backgroundColor: '#001027',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            }
-          }} /> */}
+              headerShown: false,
+              title: 'Worker Dashboard.',
+              headerStyle: {
+                backgroundColor: '#001027',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              }
+            }} /> */}
           </Stack.Navigator>
         </NavigationContainer>
       </NativeBaseProvider>

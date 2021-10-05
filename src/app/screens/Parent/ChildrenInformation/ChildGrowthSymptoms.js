@@ -8,6 +8,8 @@ import {
     Spacer, ChevronDownIcon, CheckIcon, Input, Text, Select
 } from "native-base"
 import { Icon } from 'react-native-elements'
+import { TextInput } from 'react-native-paper';
+
 function ChildGrowthSymptoms(props) {
     let [service, setService] = React.useState("")
     return (
@@ -22,36 +24,40 @@ function ChildGrowthSymptoms(props) {
                             {props.symptom === "Weight" ||
                                 props.symptom === "Height" ||
                                 props.symptom === "Age" ?
-                                <Input
+                                <TextInput
                                     mx="3"
+                                    label = {props.symptom}
                                     placeholder={props.symptom}
+                                    placeholderTextColor = "black"
                                     style={{
                                         fontSize: 20,
                                         width: 300,
+                                        textAlign: 'center',
+                                        backgroundColor: 'white',
                                         // color: "black",
                                         // fontWeight: "bold"
                                     }}
                                 /> : props.symptom === "Emotional Problem" ?
                                     <Select
+                                    label = {props.symptom}
                                         selectedValue={service}
-                                        minWidth="200"
+                                        minWidth="300"
                                         accessibilityLabel="Choose Service"
                                         placeholder={props.symptom}
+                                        placeholderTextColor = "black"
                                         _selectedItem={{
                                             bg: "teal.600",
                                             endIcon: <CheckIcon size="5" />,
                                         }}
                                         style={{
                                             fontSize: 20,
-                                            fontWeight: "bold",
+                                            // fontWeight: "bold",
                                             width: 300,
                                             shadowOffset: { width: 10, height: 10, },
                                             shadowColor: 'black',
                                             shadowOpacity: 1.0,
-                                            // borderStyle: 'solid',
-                                            // borderWidth: 2,
-                                            // borderRadius: 6,
-                                            // borderColor: "black",
+                                            textAlign:'center', 
+                                            height: 100
                                         }}
                                         mt={1}
                                         // dropdownOpenIcon={require("../../../assets/dropdown.png")}
@@ -65,17 +71,22 @@ function ChildGrowthSymptoms(props) {
                                         minWidth="300"
                                         accessibilityLabel="Choose Service"
                                         placeholder={props.symptom}
+                                        placeholderTextColor = "black"
                                         _selectedItem={{
                                             bg: "teal.600",
                                             endIcon: <CheckIcon size="5" />,
                                         }}
                                         style={{
                                             fontSize: 20,
-                                            fontWeight: "bold",
-                                            width: 300,
+                                            // fontWeight: "bold",
+                                            width: 400,
                                             shadowOffset: { width: 10, height: 10, },
                                             shadowColor: 'black',
                                             shadowOpacity: 1.0,
+                                            textAlign:'center',
+                                            height: "100%",
+                                            borderWidth: 1,
+                                            borderColor:'black'
                                         }}
                                         mt={1}
                                         onValueChange={(itemValue) => setService(itemValue)}
