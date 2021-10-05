@@ -59,10 +59,10 @@ function GraphModal(props) {
       </HStack>
       <HStack space={2} top={10}>
         <Text color="emerald.500" fontSize="25" fontWeight="bold">
-          Your Child Growth is Normal
+          {props.displayText}
         </Text>
       </HStack>
-      <HStack justifyContent="center" marginTop={20}>
+      {!props.polio ? <HStack justifyContent="center" marginTop={20}>
         <TouchableOpacity onPress={() => {
           setModalVisible(true);
         }}>
@@ -71,7 +71,7 @@ function GraphModal(props) {
             Check out Diet Plan for your Child
           </Text>
         </TouchableOpacity>
-      </HStack>
+      </HStack> : ""}
       <HStack style={{ marginTop: 50 }}>
         <Button size="lg" backgroundColor="#0Cb8B6"
           onPress={props.closeMenu}
