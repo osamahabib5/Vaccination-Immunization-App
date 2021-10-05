@@ -29,32 +29,32 @@ function ChildrenInfoModal(props) {
                 }}>{ChildDetails[props.childid].name}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15,
+                    fontSize: 18,
                     marginTop: 20
                 }}>Parent Name: {ChildDetails[props.childid].parentName}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Parent CNIC: {ChildDetails[props.childid].parentCNIC}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Contact No: {ChildDetails[props.childid].contactNo}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Address: {ChildDetails[props.childid].address}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>DOB: {ChildDetails[props.childid].dateOfBirth}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Gender: {ChildDetails[props.childid].gender}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>BirthPlace: {ChildDetails[props.childid].birthPlace}</Text>
                 <Text style={styles.text, {
                     fontWeight: 'bold',
@@ -63,39 +63,39 @@ function ChildrenInfoModal(props) {
                 }}>Vaccination Information</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Diphteria: {ChildDetails[props.childid].vaccination.Diphteria}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Polio: {ChildDetails[props.childid].vaccination.Polio}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Homophiles: {ChildDetails[props.childid].vaccination.Homophiles}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Rota Virus: {ChildDetails[props.childid].vaccination.Rota_Virus}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Measles: {ChildDetails[props.childid].vaccination.Measles}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Hepatitus A: {ChildDetails[props.childid].vaccination.Hepatitus_A}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Hepatitus B: {ChildDetails[props.childid].vaccination.Hepatitus_B}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Papilloma Virus: {ChildDetails[props.childid].vaccination.Papilloma_Virus}</Text>
                 <Text style={styles.text, {
                     fontWeight: '200',
-                    fontSize: 15
+                    fontSize: 18
                 }}>Influenza: {ChildDetails[props.childid].vaccination.Influenze}</Text>
                 <View style={styles.row, { marginTop: 20, alignSelf: 'center' }}>
                     <TouchableOpacity onPress={props.closeModal}>
@@ -114,11 +114,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "white",
-        width: "80%",
-        marginTop: 50,
+        width: "100%",
         alignSelf: 'center',
         borderWidth: 2,
-        borderRadius: 10
     },
     infoContainer: {
         alignItems: 'center',
