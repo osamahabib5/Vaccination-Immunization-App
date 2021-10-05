@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Image, View, Modal, TouchableOpacity, Alert } from 'react-native'
 import {
   CheckIcon,
@@ -6,7 +6,7 @@ import {
   Text,
   Center,
   NativeBaseProvider,
-  Heading,
+  Heading, Button
 } from "native-base"
 import { Avatar } from 'react-native-paper';
 import DietPlans from '../../Worker/DietPlans';
@@ -29,13 +29,19 @@ const data = [{
 }]
 function GraphModal(props) {
   const [modalVisible, setModalVisible] = useState(false);
+  const hideDietPlans = () => {
+    setModalVisible(false);
+  }
   return (
     //   <View style={{flexDirection: 'row', justifyContent: 'space-evenly', flexWrap: 'wrap', alignItems: 'center'}}>
     //   {data.map((p, i) => {
     //     return <Donut key={i} percentage={p.percentage} color={p.color} delay={500 + 100 * i} max={p.max}/>
     //   })}
     // </View>
-    <Center flex={1} px="3" >
+    <Center flex={1} px="3" flexDir="column"
+      alignSelf="center"
+      position="absolute"
+      top={20}>
       <HStack flexDir="column">
         <View style={{ marginBottom: 80 }}>
           <Avatar.Icon {...props} icon={() => (
@@ -51,22 +57,27 @@ function GraphModal(props) {
           Result
         </Heading>
       </HStack>
-      <HStack space={2}>
-        <Text color="emerald.500" fontSize="25">
-         Your Child Growth is Normal
+      <HStack space={2} top={10}>
+        <Text color="emerald.500" fontSize="25" fontWeight="bold">
+          Your Child Growth is Normal
         </Text>
-
       </HStack>
-      <HStack justifyContent="center" top="5">
+      <HStack justifyContent="center" marginTop={20}>
         <TouchableOpacity onPress={() => {
           setModalVisible(true);
         }}>
-          <Text color="emerald.500" fontSize="15" underline={true}
-            style={{ cursor: 'pointer' }}
+          <Text fontSize="18" underline={true}
           >
             Check out Diet Plan for your Child
           </Text>
         </TouchableOpacity>
+      </HStack>
+      <HStack style={{ marginTop: 50 }}>
+        <Button size="lg" backgroundColor="#0Cb8B6"
+          onPress={props.closeMenu}
+        >
+          Close
+        </Button>
       </HStack>
       <Modal
         animationType="slide"
@@ -77,7 +88,7 @@ function GraphModal(props) {
           setModalVisible(!modalVisible);
         }}
       >
-        <DietPlans />
+        <DietPlans hideDietPlans={hideDietPlans} />
       </Modal>
     </Center>
   )
