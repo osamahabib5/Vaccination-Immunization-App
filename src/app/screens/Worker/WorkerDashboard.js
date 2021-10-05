@@ -1,56 +1,53 @@
 import React, { useState } from 'react'
-import { View, Modal, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Modal, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
 import ChildDetails from '../Parent/ChildrenInformation/ChildDetails';
 import ChildrenInfoModal from '../Parent/ChildrenInformation/ChildrenInfoModal';
-
+import { Avatar, Button, Card, Title, Text } from 'react-native-paper';
+import { fontWeight, style } from 'styled-system';
 function WorkerDashboard() {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [childid, setchildid] = useState(0);
-  const closeModal = () => {
-    setModalVisible(false);
-  }
   return (
     <ScrollView>
-      <View >
-        <TextInput
-          style={{ backgroundColor: '#f2f9fc', textAlign: 'center', fontWeight: 'bold', fontSize: 20, width: 200, borderRadius: 10, alignSelf: 'flex-end' }}
-          placeholder='Search Child ID' placeholderTextColor="#00000087" />
-        <View >
-          <View style={{ marginTop: 20 }}>
-            <Text style={{ fontSize: 20, alignSelf: 'center', marginBottom: 8 }}>Child Information</Text>
-            {ChildDetails.map(data => {
-              return (
-                <View key={data.id} style={{ flexDirection: 'row', marginTop: 16, alignItems: 'center', paddingHorizontal: 12 }}>
-                  <TextInput
-                    style={{ backgroundColor: '#eee', fontWeight: 'bold', fontSize: 16, width: 200, borderRadius: 10, paddingLeft: 15 }}
-                    placeholder='Children Name' value={data.name} placeholderTextColor="#00000087" />
-                  <TouchableOpacity style={{ backgroundColor: 'white' }}
-                    onPress={() => {
-                      setchildid(data.id);
-                      setModalVisible(true);
-                    }}
-                  >
-                    <Text style={{ fontSize: 16, fontWeight: 'bold', marginLeft: 10 }}>View Details</Text>
-                  </TouchableOpacity>
-
+      <View style={styles.container}>
+        <View style={{ flex: 1, alignItems: 'center' }}>
+          <Text style={styles.heading}>Children Details</Text>
+        </View>
+        <View style={styles.ChildrensList}>
+          {ChildDetails.map(data => {
+            return (
+              <Card key={data.id} style={{
+                borderStyle: 'solid',
+                borderWidth: 2,
+                borderRadius: 6,
+                borderColor: "black",
+                marginTop: 10,
+                width: "100%",
+              }}>
+                <View style={styles.cardstyles}>
+                  <View style={styles.displaypicture}>
+                    <Card.Content>
+                      <View style={{
+                        flexDirection: 'row',
+                      }}>
+                        <View style={{}}>
+                          <Avatar.Image size={40} source={require('../../assets/children.png')} />
+                        </View>
+                        <View style={{
+                          marginLeft: 20,
+                        }}>
+                          <Text style={styles.childid}>{data.name}</Text>
+                        </View>
+                      </View>
+                    </Card.Content>
+                  </View>
+                  {/* <Card.Actions>
+                    <Button>Cancel</Button>
+                    <Button>Ok</Button>
+                  </Card.Actions> */}
                 </View>
-              )
-            })}
-            <Modal
-              animationType="slide"
-              visible={modalVisible}
-              transparent={true}
-              onRequestClose={() => {
-                Alert.alert("Modal has been closed.");
-                setModalVisible(!modalVisible);
-              }}
-            >
-              <ChildrenInfoModal closeModal={closeModal}
-                childid={childid}
-              />
-            </Modal>
-          </View>
+              </Card>
+            )
+          })}
         </View>
       </View>
     </ScrollView >
@@ -59,13 +56,29 @@ function WorkerDashboard() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    marginTop: 30
   },
-  textInput: {
+  ChildrensList: {
+    marginTop: 30,
+  },
+  heading: {
+    fontSize: 30,
+    fontWeight: 'bold'
+  },
+  cardstyles: {
+    flex: 1,
+    flexDirection: 'row',
+    padding: 30,
+    borderColor: 'black',
+  },
+  displaypicture: {
+    alignItems: 'flex-start'
+  },
+  childid: {
     // marginTop: Platform.OS === 'ios' ? 0 : -12,
     color: 'black',
     fontSize: 20,
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   searchFilterTextField: {
     backgroundColor: '#eee',

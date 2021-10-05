@@ -10,7 +10,7 @@ const users = [
     {
         id: 0,
         name: 'Ali',
-        parent : 'Parent: Sami',
+        parent: 'Parent: Sami',
         avatar: '../../../assets/images/baby.png',
         color: 'white',
 
@@ -18,7 +18,7 @@ const users = [
     {
         id: 1,
         name: 'Kamran',
-        parent : 'Parent: Sami',
+        parent: 'Parent: Sami',
         avatar: '../../../assets/images/baby.png',
         color: 'white',
 
@@ -26,7 +26,7 @@ const users = [
     {
         id: 2,
         name: 'Saleem',
-        parent : 'Parent: Sami',
+        parent: 'Parent: Sami',
         avatar: '../../../assets/images/baby.png',
         color: 'white',
 
@@ -34,7 +34,7 @@ const users = [
     {
         id: 3,
         name: 'Ahmed',
-        parent : 'Parent: Sami',
+        parent: 'Parent: Sami',
         avatar: '../../../assets/images/baby.png',
         color: 'white',
 
@@ -42,7 +42,7 @@ const users = [
     {
         id: 4,
         name: 'Junaid',
-        parent : 'Parent: Sami',
+        parent: 'Parent: Sami',
         avatar: '../../../assets/images/baby.png',
         color: 'white',
 
@@ -50,7 +50,7 @@ const users = [
     {
         id: 5,
         name: 'Kamil',
-        parent : 'Parent: Sami',
+        parent: 'Parent: Sami',
         avatar: '../../../assets/images/baby.png',
         color: 'white',
 
@@ -58,7 +58,7 @@ const users = [
     {
         id: 6,
         name: 'Sameer',
-        parent : 'Parent: Sami',
+        parent: 'Parent: Sami',
         avatar: '../../../assets/images/baby.png',
         color: 'white',
 
@@ -66,7 +66,7 @@ const users = [
     {
         id: 7,
         name: 'Nadir',
-        parent : 'Parent: Sami',
+        parent: 'Parent: Sami',
         avatar: '../../../assets/images/baby.png',
         color: 'white',
 
@@ -81,16 +81,19 @@ function ChildrenInformation(props, { navigation }) {
     }
     const LeftContent = props => <Avatar.Icon {...props} icon={() => (
         <Image
-          source={require('../../../assets/images/baby.png')}
-          style={{ width: 40, height: 40, borderRadius:20 }}
+            source={require('../../../assets/images/baby.png')}
+            style={{ width: 40, height: 40, borderRadius: 20 }}
         />
-      )} size={40} />
+    )} size={40} />
     return (
         users.map((u, i) => {
             return (
-                <Card id={u.id} onPress={()=>null} style={{marginBottom:16, borderRadius:30}}>
-                    <Card.Title title={u.name} subtitle={u.parent} 
-                    left={LeftContent} />
+                <Card id={u.id} onPress={() => null} style={{
+                    marginBottom: 16,
+                    borderRadius: 30
+                }}>
+                    <Card.Title title={u.name} subtitle={u.parent}
+                        left={LeftContent} />
                     {/* <Card.Content>
                         <Title>Card title</Title>
                         <Paragraph>Card content</Paragraph>
@@ -101,7 +104,7 @@ function ChildrenInformation(props, { navigation }) {
                         <Button>Ok</Button>
                     </Card.Actions> */}
                 </Card>
-                
+
             );
         })
     )

@@ -9,7 +9,7 @@ function WorkerNavigator() {
     return (
         <Drawer.Navigator>
             <Drawer.Screen name="Home" component={WorkerDashboard} options={{
-                headerShown: false,
+                // headerShown: false,
                 title: 'Home',
                 headerStyle: {
                     backgroundColor: '#001027',
@@ -20,7 +20,7 @@ function WorkerNavigator() {
                 }
             }} />
             <Drawer.Screen name="Polio Symptoms" component={CheckPolioSymptoms} options={{
-                headerShown: false,
+                // headerShown: false,
                 title: 'Polio Symptoms',
                 headerStyle: {
                     backgroundColor: '#001027',

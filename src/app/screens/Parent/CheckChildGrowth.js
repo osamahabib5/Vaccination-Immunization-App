@@ -1,75 +1,90 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, Modal,Alert } from 'react-native'
-import { Radio, Heading, HStack, Center, Stack, Flex, Button, ScrollView } from 'native-base';
+import { View, Text, StyleSheet, Modal, Alert } from 'react-native'
+import { Radio, Heading, HStack, Center, Button, Stack, Flex, ScrollView } from 'native-base';
 import ChildGrowthSymptoms from './ChildrenInformation/ChildGrowthSymptoms';
-
+import { TextInput } from 'react-native-paper';
 import GraphModal from './ChildrenInformation/GraphModal';
-
 
 function CheckChildGrowth() {
     const [modalVisible, setModalVisible] = useState(false);
+    const [text, setText] = React.useState('');
+    const [visible, setVisible] = React.useState(false);
+
+    const openMenu = () => setVisible(true);
+
+    const closeMenu = () => setVisible(false);
     return (
         <ScrollView>
             <Flex
                 direction="column"
             >
                 <Center style={{
-                    marginTop: 60
+                    marginTop: 30
                 }}>
                     <Heading textAlign="center" mb="10" size="xl">
                         Check Child Growth
                     </Heading>
                 </Center>
+                <Center style={{
+                    marginTop: -30
+                }}>
+                    <ChildGrowthSymptoms symptom="Weight" />
+                </Center>
                 <Center >
                     <ChildGrowthSymptoms symptom="Height" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Weight" />
-                </Center>
-                <Center >
                     <ChildGrowthSymptoms symptom="Age" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Gross Motor" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Fine Motor" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Communication" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Emotional Development" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Attention and
+                    Concentration" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Overactivity and Impulsivity" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Passivity/ Inactivity" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Planning/ Organising" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Perception of Directions" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Perception of Visual Forms
+                     and Figures" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Memory" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Spoken Language" />
                 </Center>
                 <Center >
-                    <ChildGrowthSymptoms symptom="Age" />
+                    <ChildGrowthSymptoms symptom="Reading/Writing" />
+                </Center>
+                <Center >
+                    <ChildGrowthSymptoms symptom="Social Skills" />
+                </Center>
+                <Center >
+                    <ChildGrowthSymptoms symptom="Emotional Problems" />
                 </Center>
                 <Center style={{ marginTop: 40, marginBottom: 40 }}>
-                    <Button key="lg" size="lg" onPress = {()=>{
+                    <Button key="lg" size="lg" onPress={() => {
                         setModalVisible(true);
                     }}>
                         Generate Report
