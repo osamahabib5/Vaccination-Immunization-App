@@ -89,7 +89,8 @@ function ChildrenInformation(props, { navigation }) {
         users.map((u, i) => {
             return (
                 <Card id={u.id} onPress={()=>null} style={{marginBottom:16, borderRadius:30}}>
-                    <Card.Title title={u.name} subtitle={u.parent} left={LeftContent} />
+                    <Card.Title title={u.name} subtitle={u.parent} 
+                    left={LeftContent} />
                     {/* <Card.Content>
                         <Title>Card title</Title>
                         <Paragraph>Card content</Paragraph>
