@@ -76,7 +76,7 @@ function GraphModal(props) {
         <Button size="lg" backgroundColor="#0Cb8B6"
           onPress={props.closeMenu}
         >
-          Close
+          Hide
         </Button>
       </HStack>
       <Modal

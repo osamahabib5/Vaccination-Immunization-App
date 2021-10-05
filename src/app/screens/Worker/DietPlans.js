@@ -24,13 +24,16 @@ function DietPlans(props) {
                     )} size={100} />
                 </View>
             </HStack>
-            <HStack style={{ marginTop: 20 }}>
+            <HStack style={{ marginTop: 10 }}>
                 <Heading >
                     Diet Plan for Your Child
                 </Heading>
             </HStack>
-            <HStack style={{ marginTop: 10 }}>
-                <Text style={{ fontSize: 16 }}>
+            <HStack style={{ marginTop: 10,
+            padding: 13
+            }}>
+                <Text style={{ fontSize: 16,
+                textAlign: 'center' }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor condimentum lacinia quis vel eros donec ac odio tempor. Diam vel quam elementum pulvinar etiam. Convallis a cras semper auctor neque vitae tempus. Quam viverra orci sagittis eu volutpat. Nisi lacus sed viverra tellus in. Sagittis purus sit amet volutpat. Condimentum id venenatis a condimentum. Sapien eget mi proin sed libero enim sed faucibus. Euismod in pellentesque massa placerat duis. Vitae congue mauris rhoncus aenean vel elit scelerisque. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Quis enim lobortis scelerisque fermentum dui. Congue eu consequat ac felis donec et. Purus faucibus ornare suspendisse sed nisi lacus sed.
                 </Text>
             </HStack>

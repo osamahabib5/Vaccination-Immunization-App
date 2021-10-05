@@ -4,74 +4,6 @@ import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import { ListItem, Icon } from 'react-native-elements'
 import ChildDetails from './ChildDetails';
 import ChildrenInfoModal from './ChildrenInfoModal';
-import DietPlanModal from './DietPlanModal';
-import { marginBottom } from 'styled-system';
-const users = [
-    {
-        id: 0,
-        name: 'Ali',
-        parent: 'Parent: Sami',
-        avatar: '../../../assets/images/baby.png',
-        color: 'white',
-
-    },
-    {
-        id: 1,
-        name: 'Kamran',
-        parent: 'Parent: Sami',
-        avatar: '../../../assets/images/baby.png',
-        color: 'white',
-
-    },
-    {
-        id: 2,
-        name: 'Saleem',
-        parent: 'Parent: Sami',
-        avatar: '../../../assets/images/baby.png',
-        color: 'white',
-
-    },
-    {
-        id: 3,
-        name: 'Ahmed',
-        parent: 'Parent: Sami',
-        avatar: '../../../assets/images/baby.png',
-        color: 'white',
-
-    },
-    {
-        id: 4,
-        name: 'Junaid',
-        parent: 'Parent: Sami',
-        avatar: '../../../assets/images/baby.png',
-        color: 'white',
-
-    },
-    {
-        id: 5,
-        name: 'Kamil',
-        parent: 'Parent: Sami',
-        avatar: '../../../assets/images/baby.png',
-        color: 'white',
-
-    },
-    {
-        id: 6,
-        name: 'Sameer',
-        parent: 'Parent: Sami',
-        avatar: '../../../assets/images/baby.png',
-        color: 'white',
-
-    },
-    {
-        id: 7,
-        name: 'Nadir',
-        parent: 'Parent: Sami',
-        avatar: '../../../assets/images/baby.png',
-        color: 'white',
-
-    }
-]
 
 function ChildrenInformation(props, { navigation }) {
     const [modalVisible, setModalVisible] = useState(false);
@@ -79,34 +11,56 @@ function ChildrenInformation(props, { navigation }) {
     const closeModal = () => {
         setModalVisible(false);
     }
+    const child_details = (name, dob) => {
+        return (
+            <View>
+                <Text style={styles.subtitle}>Parent Name: {name}</Text>
+                <Text style={styles.subtitle}>DOB: {dob}</Text>
+            </View>
+        )
+    }
     const LeftContent = props => <Avatar.Icon {...props} icon={() => (
         <Image
             source={require('../../../assets/images/baby.png')}
-            style={{ width: 40, height: 40, borderRadius: 20 }}
+            style={{ width: 55, height: 55, borderRadius: 20 }}
         />
     )} size={40} />
     return (
-        users.map((u, i) => {
-            return (
-                <Card id={u.id} onPress={() => null} style={{
-                    marginBottom: 16,
-                    borderRadius: 30
-                }}>
-                    <Card.Title title={u.name} subtitle={u.parent}
-                        left={LeftContent} />
-                    {/* <Card.Content>
-                        <Title>Card title</Title>
-                        <Paragraph>Card content</Paragraph>
-                    </Card.Content> */}
-                    {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} /> */}
-                    {/* <Card.Actions>
-                        <Button>Cancel</Button>
-                        <Button>Ok</Button>
-                    </Card.Actions> */}
-                </Card>
+        <View>
+            {ChildDetails.map((u, i) => {
+                return (
+                    <Card key={u.id} id={u.id} onPress={() => {
+                        setchildid(u.id);
+                        setModalVisible(true);
+                    }} style={{
+                        marginBottom: 16,
+                        borderRadius: 30,
+                        borderWidth: 1,
+                        borderColor: 'black'
+                    }}>
+                        <Card.Title title={u.name}
+                            // subtitleStyle={{ marginBottom: 2 }}
+                            subtitle={child_details(u.parentName,
+                                u.dateOfBirth)}
+                            left={LeftContent} />
+                    </Card>
 
-            );
-        })
+                );
+            })}
+            <Modal
+                animationType="slide"
+                visible={modalVisible}
+                // transparent={true}
+                onRequestClose={() => {
+                    Alert.alert("Modal has been closed.");
+                    setModalVisible(!modalVisible);
+                }}
+            >
+                <ChildrenInfoModal childid={childid}
+                    closeModal={closeModal}
+                />
+            </Modal>
+        </View>
     )
 }
 
@@ -118,6 +72,9 @@ const styles = StyleSheet.create({
         width: 100,
         fontSize: 1,
         fontWeight: 'bold'
+    },
+    subtitle: {
+        fontSize: 12,
     },
     ViewDetailsButton: {
         backgroundColor: '#0Cb8B6',
