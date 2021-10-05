@@ -19,13 +19,15 @@ function CheckChildGrowth() {
                 direction="column"
             >
                 <Center style={{
-                    marginTop: 60
+                    marginTop: 30
                 }}>
                     <Heading textAlign="center" mb="10" size="xl">
                         Check Child Growth
                     </Heading>
                 </Center>
-                <Center >
+                <Center style={{
+                    marginTop: -30
+                }}>
                     <ChildGrowthSymptoms symptom="Weight" />
                 </Center>
                 <Center >

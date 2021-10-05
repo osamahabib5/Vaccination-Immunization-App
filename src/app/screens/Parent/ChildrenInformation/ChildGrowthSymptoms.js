@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import {
+    AddIcon,
     Flex,
     Center,
     ScrollView,
     VStack,
-    Spacer, CheckIcon, Input, Text, Select
+    Spacer, ChevronDownIcon, CheckIcon, Input, Text, Select
 } from "native-base"
-import { View } from 'react-native';
-
+import { Icon } from 'react-native-elements'
 function ChildGrowthSymptoms(props) {
     let [service, setService] = React.useState("")
     return (
@@ -27,7 +27,9 @@ function ChildGrowthSymptoms(props) {
                                     placeholder={props.symptom}
                                     style={{
                                         fontSize: 20,
-                                        width: 200
+                                        width: 300,
+                                        // color: "black",
+                                        // fontWeight: "bold"
                                     }}
                                 /> : props.symptom === "Emotional Problem" ?
                                     <Select
@@ -40,9 +42,19 @@ function ChildGrowthSymptoms(props) {
                                             endIcon: <CheckIcon size="5" />,
                                         }}
                                         style={{
-                                            fontSize: 20
+                                            fontSize: 20,
+                                            fontWeight: "bold",
+                                            width: 300,
+                                            shadowOffset: { width: 10, height: 10, },
+                                            shadowColor: 'black',
+                                            shadowOpacity: 1.0,
+                                            // borderStyle: 'solid',
+                                            // borderWidth: 2,
+                                            // borderRadius: 6,
+                                            // borderColor: "black",
                                         }}
                                         mt={1}
+                                        // dropdownOpenIcon={require("../../../assets/dropdown.png")}
                                         onValueChange={(itemValue) => setService(itemValue)}
                                     >
                                         <Select.Item label="Yes" value="poor" />
@@ -50,7 +62,7 @@ function ChildGrowthSymptoms(props) {
                                     </Select> :
                                     <Select
                                         selectedValue={service}
-                                        minWidth="200"
+                                        minWidth="300"
                                         accessibilityLabel="Choose Service"
                                         placeholder={props.symptom}
                                         _selectedItem={{
@@ -58,10 +70,18 @@ function ChildGrowthSymptoms(props) {
                                             endIcon: <CheckIcon size="5" />,
                                         }}
                                         style={{
-                                            fontSize: 20
+                                            fontSize: 20,
+                                            fontWeight: "bold",
+                                            width: 300,
+                                            shadowOffset: { width: 10, height: 10, },
+                                            shadowColor: 'black',
+                                            shadowOpacity: 1.0,
                                         }}
                                         mt={1}
                                         onValueChange={(itemValue) => setService(itemValue)}
+                                    // dropdownIcon={
+                                    //     <ChevronDownIcon size="4" />
+                                    // }
                                     >
                                         <Select.Item label="Poor" value="poor" />
                                         <Select.Item label="Fair" value="fair" />

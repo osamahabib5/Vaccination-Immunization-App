@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Splash from './src/app/screens/Splash';
 import Login from './src/app/screens/Login';
@@ -9,20 +9,24 @@ import DrawerNavigator from './src/app/navigation/DrawerNavigator';
 import WorkerDashboard from './src/app/screens/Worker/WorkerDashboard';
 import WorkerNavigator from './src/app/navigation/WorkerNavigator';
 import { NativeBaseProvider, Box } from 'native-base';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 const Stack = createNativeStackNavigator();
 export default function App() {
-  const MyTheme = {
+  const theme = {
     ...DefaultTheme,
+    roundness: 2,
     colors: {
       ...DefaultTheme.colors,
-      background: 'red'
+      primary: '#3498db',
+      accent: '#f1c40f',
     },
   };
   return (
-    <NativeBaseProvider>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Splash" component={Splash} options={{
+    <PaperProvider theme = {theme}>
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <Stack.Navigator>
+            {/* <Stack.Screen name="Splash" component={Splash} options={{
             title: 'Child Immunization.', headerStyle: {
               backgroundColor: '#001027',
             },
@@ -60,29 +64,20 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
             }
-<<<<<<< HEAD
           }} />*/}
+            <Stack.Screen name="ParentDrawer" component={DrawerNavigator} options={{
+              headerShown: false,
+              title: 'Parent Dashboard.',
+              headerStyle: {
+                backgroundColor: '#001027',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              }
+            }} />
 
-=======
-          }} />
->>>>>>> f2f229ec8038e2b1dd0593f334555f505ea7ad83
-          <Stack.Screen name="ParentDrawer" component={DrawerNavigator} options={{
-            headerShown: false,
-            title: 'Parent Dashboard.',
-            headerStyle: {
-              backgroundColor: '#001027',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            }
-          }} />
-
-<<<<<<< HEAD
-          {/* <Stack.Screen name="WorkerDrawer" component={WorkerNavigator} options={{
-=======
-          <Stack.Screen name="WorkerDrawer" component={WorkerNavigator} options={{
->>>>>>> f2f229ec8038e2b1dd0593f334555f505ea7ad83
+            {/* <Stack.Screen name="WorkerDrawer" component={WorkerNavigator} options={{
             headerShown: false,
             title: 'Worker Dashboard.',
             headerStyle: {
@@ -92,9 +87,10 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
             }
-          }} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </NativeBaseProvider>
+          }} /> */}
+          </Stack.Navigator>
+        </NavigationContainer>
+      </NativeBaseProvider>
+    </PaperProvider>
   );
 }
