@@ -18,6 +18,7 @@ export default function App() {
     colors: {
       ...DefaultTheme.colors,
       primary: '#3498db',
+      
       accent: '#f1c40f',
     },
   };
