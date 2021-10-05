@@ -5,39 +5,69 @@ import { ListItem, Icon } from 'react-native-elements'
 import ChildDetails from './ChildDetails';
 import ChildrenInfoModal from './ChildrenInfoModal';
 import DietPlanModal from './DietPlanModal';
+import { marginBottom } from 'styled-system';
 const users = [
     {
         id: 0,
         name: 'Ali',
-        avatar: 'https://reactnative.dev/img/tiny_logo.png',
+        parent : 'Parent: Sami',
+        avatar: '../../../assets/images/baby.png',
         color: 'white',
 
     },
     {
         id: 1,
         name: 'Kamran',
-        avatar: 'https://reactnative.dev/img/tiny_logo.png',
+        parent : 'Parent: Sami',
+        avatar: '../../../assets/images/baby.png',
         color: 'white',
 
     },
     {
         id: 2,
         name: 'Saleem',
-        avatar: 'https://reactnative.dev/img/tiny_logo.png',
+        parent : 'Parent: Sami',
+        avatar: '../../../assets/images/baby.png',
         color: 'white',
 
     },
     {
         id: 3,
         name: 'Ahmed',
-        avatar: 'https://reactnative.dev/img/tiny_logo.png',
+        parent : 'Parent: Sami',
+        avatar: '../../../assets/images/baby.png',
         color: 'white',
 
     },
     {
         id: 4,
         name: 'Junaid',
-        avatar: 'https://reactnative.dev/img/tiny_logo.png',
+        parent : 'Parent: Sami',
+        avatar: '../../../assets/images/baby.png',
+        color: 'white',
+
+    },
+    {
+        id: 5,
+        name: 'Kamil',
+        parent : 'Parent: Sami',
+        avatar: '../../../assets/images/baby.png',
+        color: 'white',
+
+    },
+    {
+        id: 6,
+        name: 'Sameer',
+        parent : 'Parent: Sami',
+        avatar: '../../../assets/images/baby.png',
+        color: 'white',
+
+    },
+    {
+        id: 7,
+        name: 'Nadir',
+        parent : 'Parent: Sami',
+        avatar: '../../../assets/images/baby.png',
         color: 'white',
 
     }
@@ -49,34 +79,28 @@ function ChildrenInformation(props, { navigation }) {
     const closeModal = () => {
         setModalVisible(false);
     }
-    const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
+    const LeftContent = props => <Avatar.Icon {...props} icon={() => (
+        <Image
+          source={require('../../../assets/images/baby.png')}
+          style={{ width: 40, height: 40, borderRadius:20 }}
+        />
+      )} size={40} />
     return (
         users.map((u, i) => {
             return (
-                <Card>
-                    <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
-                    <Card.Content>
+                <Card id={u.id} onPress={()=>null} style={{marginBottom:16, borderRadius:30}}>
+                    <Card.Title title={u.name} subtitle={u.parent} left={LeftContent} />
+                    {/* <Card.Content>
                         <Title>Card title</Title>
                         <Paragraph>Card content</Paragraph>
-                    </Card.Content>
-                    <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-                    <Card.Actions>
+                    </Card.Content> */}
+                    {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} /> */}
+                    {/* <Card.Actions>
                         <Button>Cancel</Button>
                         <Button>Ok</Button>
-                    </Card.Actions>
+                    </Card.Actions> */}
                 </Card>
-                // <Card key={u.id} style={{ backgroundColor:'blue'}}>
-                //     {/* <Card.Title>{u.name}</Card.Title> */}
-                //     {/* <Card.Divider /> */}
-                //     <View key={i} style={styles.Card}>
-                //         <Image
-                //             style={styles.image}
-                //             resizeMode="cover"
-                //             source={{ uri: u.avatar }}
-                //         />
-                //         <Text>{u.name}</Text>
-                //     </View>
-                // </Card>
+                
             );
         })
     )
