@@ -96,7 +96,9 @@ function CheckChildGrowth() {
                         setModalVisible(!modalVisible);
                     }}
                 >
-                    <GraphModal closeMenu={closeMenu} />
+                    <GraphModal closeMenu={closeMenu} 
+                    displayText = "Your Child Growth is Normal!"
+                    />
                 </Modal>
             </Flex>
         </ScrollView>
