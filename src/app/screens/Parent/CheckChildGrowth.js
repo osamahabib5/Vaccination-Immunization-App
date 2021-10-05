@@ -7,12 +7,8 @@ import GraphModal from './ChildrenInformation/GraphModal';
 
 function CheckChildGrowth() {
     const [modalVisible, setModalVisible] = useState(false);
-    const [text, setText] = React.useState('');
-    const [visible, setVisible] = React.useState(false);
 
-    const openMenu = () => setVisible(true);
-
-    const closeMenu = () => setVisible(false);
+    const closeMenu = () => setModalVisible(false);
     return (
         <ScrollView>
             <Flex
@@ -99,7 +95,7 @@ function CheckChildGrowth() {
                         setModalVisible(!modalVisible);
                     }}
                 >
-                    <GraphModal></GraphModal>
+                    <GraphModal closeMenu={closeMenu} />
                 </Modal>
             </Flex>
         </ScrollView>
