@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { View, Modal, StyleSheet, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native'
+import { View, Modal, StyleSheet,Alert, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
 import ChildDetails from '../Parent/ChildrenInformation/ChildDetails';
 import ChildrenInfoModal from '../Parent/ChildrenInformation/ChildrenInfoModal';
 import { Avatar, Button, Card, Title, Text } from 'react-native-paper';
 import UpdateVaccinationDetails from './UpdateVaccinationDetails.js';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Input } from 'react-native-elements';
 function WorkerDashboard() {
   const child_details = (name, dob) => {
     return (
@@ -29,16 +31,30 @@ function WorkerDashboard() {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <View style = {{
+        <View style = {styles.searchIcon}>
+          <Input
+            placeholder='Search Child Id'
+            rightIcon={
+              <Icon
+                name='search'
+                size={20}
+                color='black'
+              />
+            }
+          />
+        </View>
+        <View style={{
           flex: 1,
           alignItems: 'center',
-          marginTop: "6%"
         }}>
-          <Text style = {{fontSize: 30,
-          fontWeight: 'bold'}}>Children Information</Text>
+          <Text style={{
+            fontSize: 30,
+            fontWeight: 'bold'
+          }}>Children Information</Text>
         </View>
-        <View style={{ 
-        padding: 20 }}>
+        <View style={{
+          padding: 20
+        }}>
           {ChildDetails.map((u, i) => {
             return (
               <Card key={u.id} id={u.id} onPress={() => {
@@ -50,7 +66,7 @@ function WorkerDashboard() {
                 borderWidth: 1,
                 borderColor: 'black',
               }}>
-                <Card.Title title={u.name + "  (Click to View)"}
+                <Card.Title title={u.name}
                   // subtitleStyle={{ marginBottom: 2 }}
                   subtitle={child_details(u.parentName,
                     u.dateOfBirth)}
@@ -81,6 +97,11 @@ function WorkerDashboard() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
+  },
+  searchIcon:{
+      flex: 1,
+      flexDirection:'row',
+      alignSelf:'flex-end'
   },
   ChildrensList: {
     marginTop: 30,

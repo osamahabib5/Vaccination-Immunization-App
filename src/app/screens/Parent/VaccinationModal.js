@@ -43,7 +43,9 @@ function VaccinationModal(props) {
                                 textAlign: 'center'
                             }}>{VaccinationDetails[props.displayid].name
                                 }</Text>
-                            <View style={{ marginTop: 4, alignItems: 'center' }}>
+                            <View style={{ marginTop: 10, alignItems: 'center' ,
+                        
+                        }}>
                                 <Text style={styles.displayText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi. Amet tellus cras adipiscing enim eu turpis egestas pretium. Natoque penatibus et magnis dis parturient. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Sed tempus urna et pharetra pharetra. Lectus vestibulum mattis ullamcorper velit sed. Ipsum nunc aliquet bibendum enim facilisis gravida neque. Morbi tincidunt ornare massa eget. Dolor morbi non arcu risus quis varius quam. Sed pulvinar proin gravida hendrerit lectus a. Vivamus arcu felis bibendum ut tristique et egestas quis ipsum. Tempor orci eu lobortis elementum nibh tellus molestie.</Text>
 
                             </View>
@@ -78,7 +80,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     displayText: {
-        fontSize: 16
+        fontSize: 16,
+        textAlign: 'justify'
     }
 })
 export default VaccinationModal

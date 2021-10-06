@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { TextInput, View } from "react-native";
 import {
     AddIcon,
     Flex,
@@ -8,7 +9,7 @@ import {
     Spacer, ChevronDownIcon, CheckIcon, Input, Text, Select
 } from "native-base"
 import { Icon } from 'react-native-elements'
-import { TextInput } from 'react-native-paper';
+// import { TextInput } from 'react-native-paper';
 
 function ChildGrowthSymptoms(props) {
     let [service, setService] = React.useState("")
@@ -24,27 +25,34 @@ function ChildGrowthSymptoms(props) {
                             {props.symptom === "Weight" ||
                                 props.symptom === "Height" ||
                                 props.symptom === "Age" ?
-                                <TextInput
-                                    mx="3"
-                                    label = {props.symptom}
-                                    placeholder={props.symptom}
-                                    placeholderTextColor = "black"
-                                    style={{
-                                        fontSize: 20,
-                                        width: 300,
-                                        textAlign: 'center',
-                                        backgroundColor: 'white',
-                                        // color: "black",
-                                        // fontWeight: "bold"
-                                    }}
-                                /> : props.symptom === "Emotional Problem" ?
+                                <View style = {{marginBottom: 10}}>
+                                    <TextInput
+                                        style={{
+                                            top: 1,
+                                            height: 50,
+                                            flex: 1,
+                                            color: '#001027',
+                                            textAlign: "left",
+                                            width: 300,
+                                            padding: 10,
+                                            fontWeight: "bold",
+                                            borderColor: 'black',
+                                            borderWidth: 0.5
+                                        }
+                                        }
+                                        placeholder={props.symptom}
+                                        placeholderTextColor="#00000087"
+
+                                    />
+                                </View>
+                                : props.symptom === "Emotional Problem" ?
                                     <Select
-                                    label = {props.symptom}
+                                        label={props.symptom}
                                         selectedValue={service}
                                         minWidth="300"
                                         accessibilityLabel="Choose Service"
                                         placeholder={props.symptom}
-                                        placeholderTextColor = "black"
+                                        placeholderTextColor="black"
                                         _selectedItem={{
                                             bg: "teal.600",
                                             endIcon: <CheckIcon size="5" />,
@@ -56,7 +64,7 @@ function ChildGrowthSymptoms(props) {
                                             shadowOffset: { width: 10, height: 10, },
                                             shadowColor: 'black',
                                             shadowOpacity: 1.0,
-                                            textAlign:'center', 
+                                            textAlign: 'center',
                                             height: 100
                                         }}
                                         mt={1}
@@ -71,7 +79,7 @@ function ChildGrowthSymptoms(props) {
                                         minWidth="300"
                                         accessibilityLabel="Choose Service"
                                         placeholder={props.symptom}
-                                        placeholderTextColor = "black"
+                                        placeholderTextColor="black"
                                         _selectedItem={{
                                             bg: "teal.600",
                                             endIcon: <CheckIcon size="5" />,
@@ -83,10 +91,10 @@ function ChildGrowthSymptoms(props) {
                                             shadowOffset: { width: 10, height: 10, },
                                             shadowColor: 'black',
                                             shadowOpacity: 1.0,
-                                            textAlign:'center',
+                                            textAlign: 'center',
                                             height: "100%",
                                             borderWidth: 1,
-                                            borderColor:'black'
+                                            borderColor: 'black'
                                         }}
                                         mt={1}
                                         onValueChange={(itemValue) => setService(itemValue)}
@@ -109,3 +117,4 @@ function ChildGrowthSymptoms(props) {
 }
 
 export default ChildGrowthSymptoms
+// TextInput:

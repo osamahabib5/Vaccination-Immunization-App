@@ -26,13 +26,20 @@ function VaccinationDashboard() {
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
                 {
                     VaccinationDetails.map((l, i) => (
-                        <ListItem key={i} bottomDivider>
+                        <ListItem key={i} bottomDivider
+                            onPress={() => {
+                                setid(l.id);
+                                setVisible(true);
+                            }}
+                        >
                             <Avatar rounded source={require('../../assets/injection1.png')} />
                             <ListItem.Content>
-                                <ListItem.Title 
-                                style = {{color:"black",
-                            fontSize :18,
-                        fontWeight: '100'}}
+                                <ListItem.Title
+                                    style={{
+                                        color: "black",
+                                        fontSize: 18,
+                                        fontWeight: '100'
+                                    }}
                                 >{l.name}</ListItem.Title>
                                 <ListItem.Subtitle>Manufacturer: {l.manufacturer}</ListItem.Subtitle>
 

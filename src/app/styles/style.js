@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 40
+        marginTop: 75
     },
     button_section: {
         width: '100%',
@@ -108,10 +108,13 @@ export const styles = StyleSheet.create({
         height: 50,
         flex: 1,
         color: '#001027',
-        textAlign: "center",
+        textAlign: "left",
         width: 320,
         padding: 10,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        borderColor: 'black',
+        borderWidth: 0.5,
+        borderRadius: 3
     },
     buttonSubmit: {
         backgroundColor: '#0Cb8B6',
