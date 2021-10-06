@@ -18,24 +18,36 @@ export default function App() {
     colors: {
       ...DefaultTheme.colors,
       primary: '#3498db',
-      
+
       accent: '#f1c40f',
     },
   };
   return (
     <PaperProvider theme={theme}>
       <NativeBaseProvider>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Splash" component={Splash} options={{
-              title: 'Child Immunization.', headerStyle: {
-                backgroundColor: '#001027',
-              },
-              headerTintColor: '#fff',
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              }
-            }} />
+        <NavigationContainer
+        >
+          <Stack.Navigator screenOptions={{
+            cardStyle: {
+              backgroundColor: '#ffffff',
+            }
+          }}>
+            <Stack.Screen name="Splash" component={Splash}
+              cardStyle={{
+                backgroundColor: 'black'
+              }}
+              options={{
+                title: 'Child Immunization.',
+
+                headerStyle: {
+                  backgroundColor: '#001027',
+                },
+
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                  fontWeight: 'bold',
+                }
+              }} />
             <Stack.Screen name="SignUp" component={SignUp} options={{
               title: "Parent's Registration",
               headerStyle: {
